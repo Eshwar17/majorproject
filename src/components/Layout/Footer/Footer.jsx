@@ -18,13 +18,13 @@ const Footer = () => {
             size="sm"
             textAlign={"center"}
             fontWeight={"200"}
-            children="Copyright © 2024 | GrapplTech"
+            children="Copyright © 2025 | GrapplTech"
             color={"white"}
           />
         </VStack>
         <VStack alignItems={["center", "flex-start"]} width="full">
-          <Text>Mail : support@grappl.tech</Text>
-          <Text>careers@grappl.tech</Text>
+          <Text>Mail : support@grappltech.in</Text>
+          <Text>careers@grappltech.in</Text>
           <Text>Phone : +91 8099523442</Text>
         </VStack>
         <HStack

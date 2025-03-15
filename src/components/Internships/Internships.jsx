@@ -117,13 +117,13 @@ const Bootcamp = ({
         borderRadius={4}
         // textTransform={"uppercase"}
         >★{lectureCount}</Heading>
-        <h6>based on {views - 1560} reviews</h6>
+        <h6>based on {views - 1260} reviews</h6>
       <Heading
       color={"#FEBD00"}
         size={"md"}
         // textTransform={"uppercase"}
         fontFamily={"Poppins"}>
-          <strike>₹{views}</strike> ₹{views - 1500}
+          <strike>₹{views}</strike> ₹{views - 100}
         </Heading>
       <Stack direction={["column", "row"]} alignItems={"center"}>
         <Link to={`/internship/${id}`}>
@@ -318,7 +318,7 @@ const Internships = () => {
           }
           // views={78}
           imageSrc={
-            "https://d1h9h5g2pln59q.cloudfront.net/MERN_Stack_Hero_bc2119602a.png"
+            "https://img.freepik.com/free-vector/pair-programming-concept-illustration_114360-2170.jpg?t=st=1742066758~exp=1742070358~hmac=7b0b3fbc5bdeed91a036c337948eb52921d989bba3d9caa39e26c9a2594bf864&w=826"
           }
           id={"Eshwar"}
           creator={"6 Months"}
@@ -348,7 +348,7 @@ const Internships = () => {
           }
           // views={views - 22}
           imageSrc={
-            "https://www.mtaeducation.in/images/courses/details/corejava.png"
+            "https://img.freepik.com/free-vector/tiny-developers-programming-website-internet-platform-flat-vector-illustration-cartoon-programmers-near-screen-with-open-code-script-software-development-digital-technology-concept_74855-10168.jpg?t=st=1742066651~exp=1742070251~hmac=b9cacc18264e514edeb41b5bfc7f752f598511bb19f86d19a89da12a96bb1ae2&w=1380"
           }
           id={"Eshwar"}
           creator={"6 Months"}

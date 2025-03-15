@@ -6,7 +6,6 @@ import { ChakraProvider, theme } from '@chakra-ui/react';
 import {Provider as ReduxProvider} from "react-redux";
 import store from './redux/store';
 import './index.css';
-// import './tailwind.css';
 import Popups from './popups/Popup.jsx';
 
 const container = document.getElementById('root');
