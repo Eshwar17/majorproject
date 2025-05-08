@@ -13,6 +13,23 @@ import Services from './components/Testimonials/Services';
 import ResumeEditor from './components/ResumeMaker/ResumeEditor';
 import ResumePage from './components/ResumeMaker/ResumePage';
 import CampusAmbassador from './components/CampusAmbassador/CampusAmbassador';
+import People from './components/People/People';
+import BathiniVenkataRushitha from './components/People/BathiniVenkataRushitha';
+import IppaturiHarshaVardhanReddy from './components/People/Ippaturi HarshaVardhanReddy';
+import KAPAMANJUNATHNAIDU from './components/People/KAPAMANJUNATHNAIDU';
+import VinukondaSrujan from './components/People/VinukondaSrujan';
+import OguriMaheshKumar from './components/People/OguriMaheshKumar';
+import OguriManojKumar from './components/People/OguriManojKumar';
+import KASTHURIUDAYKUMAR from './components/People/KASTHURIUDAYKUMAR';
+import VigneshMuddapolu from './components/People/VigneshMuddapolu';
+import YaswanthA from './components/People/YASWANTHA';
+import VasuVavilla from './components/People/VASUVAVILLA';
+import UDAYRAKESHVARMAPASUPARTHI from './components/People/UDAYRAKESHVARMAPASUPARTHI';
+import GaneshMuddapolu from './components/People/GaneshMuddapolu';
+import BharathVarikuti from './components/People/BHARATHVARIKUTI';
+import KVaishnavi from './components/People/KVaishnavi';
+import SiddardhaKancharla from './components/People/SiddardhaKancharla';
+import RakeshJalla from './components/People/RakeshJalla';
 
 function App() {
   window.addEventListener("contextmenu", (e)=>{
@@ -60,6 +77,23 @@ function App() {
         <Route path="/resumetemplate1" element={<ResumeEditor />} />
         <Route path="/resumemaker" element={<ResumePage />} />
         <Route path="/partnerregistration" element={<CampusAmbassador />} />
+        <Route path="/akashbellam" element={<People />} />
+        <Route path="/bathinivenkatarushitha" element={<BathiniVenkataRushitha/>} />
+        <Route path="/ippaturiharshavardhanreddy" element={<IppaturiHarshaVardhanReddy />} />
+        <Route path="/ogurimaheshkumar" element={<OguriMaheshKumar/>} />
+        <Route path="/ogurimanojkumar" element={<OguriManojKumar/>} />
+        <Route path="/vinukondasrujan" element={<VinukondaSrujan/>} />
+        <Route path="/kasturiudaykumar" element={<KASTHURIUDAYKUMAR/>} />
+        <Route path="/kapamanjunathnaidu" element={<KAPAMANJUNATHNAIDU/>} />
+        <Route path="/vigneshmuddapolu" element={<VigneshMuddapolu/>} />
+        <Route path="/yaswantha" element={<YaswanthA/>} />
+        <Route path="/vasuvavilla" element={<VasuVavilla/>} />
+        <Route path="/udayrakeshvarmapasuparthi" element={<UDAYRAKESHVARMAPASUPARTHI/>} />
+        <Route path="/ganeshmuddapolu" element={<GaneshMuddapolu/>} />
+        <Route path="/bharathvarikuti" element={<BharathVarikuti/>} />
+        <Route path="/kvaishnavi" element={<KVaishnavi/>} />
+        <Route path="/siddardhakancharla" element={<SiddardhaKancharla/>} />
+        <Route path="/rakeshjalla" element={<RakeshJalla/>} />
       </Routes>
       <Footer />
     </Router>
