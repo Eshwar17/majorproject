@@ -116,7 +116,8 @@ This portal serves as official verification of their course completion and achie
 <strong>Email:</strong> bellamakash5@gmail.com<br></br>
 <strong>Phone Number:</strong> 9573231424<br></br>
 <strong>College Name:</strong> SIMATS Engineering<br></br>
-<strong>Credential ID:</strong> XRCP9E4OBWLUDMHV
+<strong>Credential ID:</strong> XRCP9E4OBWLUDMHV<br></br>
+<strong>Course Completion Status:</strong> Completed✅
           </Text>
         </Box>
       </Flex>

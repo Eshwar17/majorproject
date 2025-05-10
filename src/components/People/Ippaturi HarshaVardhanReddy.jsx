@@ -116,7 +116,8 @@ This portal serves as official verification of their course completion and achie
 <strong>Email:</strong> rharshavardhan67@gmail.com<br></br>
 <strong>Phone Number:</strong> 8688855616<br></br>
 <strong>College Name:</strong> SIMATS Engineering<br></br>
-<strong>Credential ID:</strong> E1OB64VJCTHMLR92
+<strong>Credential ID:</strong> E1OB64VJCTHMLR92<br></br>
+<strong>Course Completion Status:</strong> Completed✅
           </Text>
         </Box>
       </Flex>

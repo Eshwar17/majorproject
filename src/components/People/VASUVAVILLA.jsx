@@ -114,7 +114,8 @@ const VasuVavilla = () => {
 <strong>Email:</strong>vasuvavilla18@gmail.com<br></br>
 <strong>Phone Number:</strong> 6304786630<br></br>
 <strong>College Name:</strong>Siddharth Institute of Engineering and technology<br></br>
-<strong>Credential ID:</strong> NGZTZJTSR3J3E8IK
+<strong>Credential ID:</strong> NGZTZJTSR3J3E8IK<br></br>
+<strong>Course Completion Status:</strong> In Progress
           </Text>
         </Box>
       </Flex>

@@ -115,7 +115,8 @@ const UDAYRAKESHVARMAPASUPARTHI = () => {
 <br></br>
 <strong>Phone Number:</strong> 8179953682<br></br>
 <strong>College Name:</strong>Siddharth Institute of Engineering and technology<br></br>
-<strong>Credential ID:</strong> 4H4BGCIZ42L4FICN
+<strong>Credential ID:</strong> 4H4BGCIZ42L4FICN<br></br>
+<strong>Course Completion Status:</strong> In Progress
           </Text>
         </Box>
       </Flex>

@@ -116,7 +116,8 @@ This portal serves as official verification of their course completion and achie
 <strong>Email:</strong> srujanvinukonda@gmail.com<br></br>
 <strong>Phone Number:</strong> 6281939384<br></br>
 <strong>College Name:</strong> SIMATS<br></br>
-<strong>Credential ID:</strong> 5CV0RZQAWU3X2M8H
+<strong>Credential ID:</strong> 5CV0RZQAWU3X2M8H<br></br>
+<strong>Course Completion Status:</strong> Completed✅
           </Text>
         </Box>
       </Flex>

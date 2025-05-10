@@ -116,7 +116,8 @@ This portal serves as official verification of their course completion and achie
 <strong>Email:</strong> venkatarushitha039@gmail.com<br></br>
 <strong>Phone Number:</strong> 9346687824<br></br>
 <strong>College Name:</strong> SIMATS Engineering<br></br>
-<strong>Credential ID:</strong> SQIEBPVU2MH7X1WZ
+<strong>Credential ID:</strong> SQIEBPVU2MH7X1WZ<br></br>
+<strong>Course Completion Status:</strong> Completed✅
           </Text>
         </Box>
       </Flex>

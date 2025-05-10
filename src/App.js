@@ -30,6 +30,7 @@ import BharathVarikuti from './components/People/BHARATHVARIKUTI';
 import KVaishnavi from './components/People/KVaishnavi';
 import SiddardhaKancharla from './components/People/SiddardhaKancharla';
 import RakeshJalla from './components/People/RakeshJalla';
+import BasettiVenkataAnilKumar from './components/People/BasettiVenkataAnilKumar';
 
 function App() {
   window.addEventListener("contextmenu", (e)=>{
@@ -94,6 +95,7 @@ function App() {
         <Route path="/kvaishnavi" element={<KVaishnavi/>} />
         <Route path="/siddardhakancharla" element={<SiddardhaKancharla/>} />
         <Route path="/rakeshjalla" element={<RakeshJalla/>} />
+        <Route path="/basettivenkataanilkumar" element={<BasettiVenkataAnilKumar/>} />
       </Routes>
       <Footer />
     </Router>

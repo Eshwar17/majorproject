@@ -116,7 +116,8 @@ This portal serves as official verification of their course completion and achie
 <strong>Email:</strong> ogurimanoj123@gmail.com<br></br>
 <strong>Phone Number:</strong> 9014168689<br></br>
 <strong>College Name:</strong> SIMATS Engineering<br></br>
-<strong>Credential ID:</strong> QZJMR3NKUYP0DS87
+<strong>Credential ID:</strong> QZJMR3NKUYP0DS87<br></br>
+<strong>Course Completion Status:</strong> Completed✅
           </Text>
         </Box>
       </Flex>

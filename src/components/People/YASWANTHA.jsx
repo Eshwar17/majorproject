@@ -114,7 +114,8 @@ const YaswanthA = () => {
 <strong>Email:</strong>rocksstaryash@gmail.com<br></br>
 <strong>Phone Number:</strong> 6304643291<br></br>
 <strong>College Name:</strong>Siddharth Institute of Engineering and technology<br></br>
-<strong>Credential ID:</strong> VV3IVDQ9NCURMW57
+<strong>Credential ID:</strong> VV3IVDQ9NCURMW57<br></br>
+<strong>Course Completion Status:</strong> In Progress
           </Text>
         </Box>
       </Flex>

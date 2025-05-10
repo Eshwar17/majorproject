@@ -115,7 +115,8 @@ const GaneshMuddapolu = () => {
 <br></br>
 <strong>Phone Number:</strong> 7993433564<br></br>
 <strong>College Name:</strong>Siddharth Institute of Engineering and technology<br></br>
-<strong>Credential ID:</strong> XZIXAHG2NCEDGRM2
+<strong>Credential ID:</strong> XZIXAHG2NCEDGRM2<br></br>
+<strong>Course Completion Status:</strong> In Progress
           </Text>
         </Box>
       </Flex>

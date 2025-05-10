@@ -115,7 +115,8 @@ const SiddardhaKancharla = () => {
 <br></br>
 <strong>Phone Number:</strong> 7601057932<br></br>
 <strong>College Name:</strong>SIMATS ENGINEERING<br></br>
-<strong>Credential ID:</strong> WW6BOSCJILHUV29A
+<strong>Credential ID:</strong> WW6BOSCJILHUV29A<br></br>
+<strong>Course Completion Status:</strong> In Progress
           </Text>
         </Box>
       </Flex>

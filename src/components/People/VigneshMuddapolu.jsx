@@ -114,7 +114,8 @@ const VigneshMuddapolu = () => {
 <strong>Email:</strong>vigneshmuddapolu@gmail.com<br></br>
 <strong>Phone Number:</strong> 6300326830<br></br>
 <strong>College Name:</strong>Parul institute of engineering and technology<br></br>
-<strong>Credential ID:</strong> XPEGL8UNFQSWZTLK
+<strong>Credential ID:</strong> XPEGL8UNFQSWZTLK<br></br>
+<strong>Course Completion Status:</strong> In Progress
           </Text>
         </Box>
       </Flex>

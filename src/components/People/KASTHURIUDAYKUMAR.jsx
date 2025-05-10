@@ -118,7 +118,8 @@ This portal serves as official verification of their course completion and achie
 
 <br></br>
 <strong>College Name:</strong> Siddharth Institute of Engineering and Technology<br></br>
-<strong>Credential ID:</strong> I2X7FO3FCB231L30
+<strong>Credential ID:</strong> I2X7FO3FCB231L30<br></br>
+<strong>Course Completion Status:</strong> Completed✅
           </Text>
         </Box>
       </Flex>

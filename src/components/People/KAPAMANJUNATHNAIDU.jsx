@@ -117,7 +117,8 @@ This portal serves as official verification of their course completion and achie
 <strong>Phone Number:</strong> 7981740174
 <br></br>
 <strong>College Name:</strong> SIMATS Engineering<br></br>
-<strong>Credential ID:</strong> H8X7FO0JCB23QK4T
+<strong>Credential ID:</strong> H8X7FO0JCB23QK4T<br></br>
+<strong>Course Completion Status:</strong> Completed✅
           </Text>
         </Box>
       </Flex>
