@@ -23,8 +23,11 @@ const Footer = () => {
           />
         </VStack>
         <VStack alignItems={["center", "flex-start"]} width="full">
-          <Text>Mail : support@grappltech.in</Text>
-          <Text>careers@grappltech.in</Text>
+          <Text></Text>
+          <Text>Careers : careers@grappltech.in</Text>
+          <Text>Partners : partners-operations@grappltech.in</Text>
+          <Text>Employers : hiring@grappltech.in</Text>
+          <Text>Support : support@grappltech.in</Text>
           <Text>Phone : +91 8099523442</Text>
         </VStack>
         <HStack

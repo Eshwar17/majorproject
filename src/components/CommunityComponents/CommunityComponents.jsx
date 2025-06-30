@@ -1,4 +1,4 @@
-import React from "react";
+import { useEffect, useRef } from 'react';
 import {
   Box,
   Container,
@@ -10,21 +10,51 @@ import {
   Icon,
   Button
 } from "@chakra-ui/react";
-import { HiLibrary } from "react-icons/hi";
-import { FaBusinessTime } from "react-icons/fa";
-import { FaCoffee } from "react-icons/fa";
 import { FaFileAlt } from "react-icons/fa";
 import { FaEye } from "react-icons/fa";
 import { FaAward } from "react-icons/fa";
+import { MdCall } from "react-icons/md";
+import { BiSupport } from "react-icons/bi";
+import { BsPersonCheckFill } from "react-icons/bs";
 import cooking from "../../assets/images/cooking.png";
+import portfolios from "../../assets/images/portfolios.png";
+import GoogleCalendarButton from './GoogleCalenderButton';
 
 function Services() {
+  const buttonRef = useRef(null);
+
+  useEffect(() => {
+  const alreadyInitialized = document.getElementById('google-calendar-button');
+
+  if (alreadyInitialized) return; // Prevent multiple injections
+
+  const link = document.createElement('link');
+  link.rel = 'stylesheet';
+  link.href = 'https://calendar.google.com/calendar/scheduling-button-script.css';
+  document.head.appendChild(link);
+
+  const script = document.createElement('script');
+  script.src = 'https://calendar.google.com/calendar/scheduling-button-script.js';
+  script.async = true;
+  script.onload = () => {
+    if (window.calendar && buttonRef.current) {
+      window.calendar.schedulingButton.load({
+        url: 'https://calendar.google.com/calendar/appointments/schedules/AcZssZ2KGwxgLYJI73sTiS81PebrfLUWoW04b4l7aoIbszfdnTwvw43XH2-LtnmV_0haia3ko2NzUPX-?gv=true',
+        color: '#0963ac',
+        label: 'Cook My Portfolio',
+        target: buttonRef.current,
+      });
+    }
+  };
+  document.body.appendChild(script);
+}, []);
+
   return (
     <>
       <Container maxW={"container.2xl"} padding={"2"}>
         <Heading
         class="headerddd"
-          children="LEGO for Web Developers: Build Anything with Grabbit & Go"
+          children="Portfolio = Digital Proof of Your Genius"
           fontFamily={"Poppins"}
           textAlign={["center"]}
         />
@@ -46,7 +76,7 @@ function Services() {
           <Box flex="1" mb={6} order={[1, 1, 2]}>
             <Center>
               <Image
-                src="https://img.freepik.com/free-vector/people-communicating-via-social-media_74855-5551.jpg?w=1060&t=st=1718341179~exp=1718341779~hmac=c7623ee89914fa53c79933f5a54e9da4da35b201ced4ffd81b648730a870cf54" // Add your image source here
+                src={portfolios} // Add your image source here
                 alt="GrapplTech Team"
                 borderRadius="lg"
                 maxW="45%"
@@ -69,8 +99,7 @@ function Services() {
                 textAlign={["center"]}
                 mb={4}
               >
-                Grapplers Unite! Discover Powerful Web Components Created by
-                Your Peers.
+               Your Portfolio, Your Flex — Designed to Land Gigs, Clients, and Clout.
               </Heading>
               <Center>
                 <svg
@@ -87,12 +116,7 @@ function Services() {
                 </svg>
               </Center>
               <Text textAlign={"center"}>
-                Tired of building websites from scratch? Feeling like a hamster
-                on a wheel of code? Introducing Grabbit & Go, your one-stop shop
-                for web components built by the awesome GrapplTech community!
-                Stop reinventing the wheel (or the dropdown menu) and unleash
-                your inner Picasso (of web design, that is). With Grabbit & Go,
-                you can:
+                In a world where your online presence is your first impression, a basic résumé just doesn’t cut it. Whether you're a developer, designer, creator, or startup hustler — your portfolio should slap. At GrapplTech, we don’t just build portfolios; we build digital personalities that scream your vibe. Custom designs, zero cringe, mobile-first, recruiter-friendly, and totally you. From GitHub to Behance, we connect your work, your story, and your goals — all in one killer site.
               </Text>
             </Box>
           </Flex>
@@ -101,37 +125,32 @@ function Services() {
             <Flex justifyContent="space-between" flexWrap="wrap">
               {/* Education First */}
               <Box flexBasis={["100%", "49%", "30%"]} textAlign="center" mb={4}>
-                <Icon as={HiLibrary} boxSize={12} color="blue.500" />
+                <Icon as={MdCall} boxSize={12} color="blue.500" />
                 <Heading as="h3" fontSize="xl" fontFamily={"Poppins"} mt={2}>
-                  Mix and match like a coding fashionista
+                  Book Your Kickoff Call
                 </Heading>
                 <Text>
-                  Forget monolithic libraries, pick the exact components you
-                  need to build your dream website.
+                 Let’s talk goals, vibes, and vision. Schedule a quick 1-on-1 meeting with our team to understand what kind of portfolio fits you. No fluff — just clarity.
                 </Text>
               </Box>
               {/* Community Driven */}
               <Box flexBasis={["100%", "49%", "30%"]} textAlign="center" mb={4}>
-                <Icon as={FaBusinessTime} boxSize={12} color="blue.500" />
+                <Icon as={BsPersonCheckFill} boxSize={12} color="blue.500" />
                 <Heading as="h3" fontSize="xl" fontFamily={"Poppins"} mt={2}>
-                  Stop writing the same code over and over (and over)
+                  Meet Your Portfolio Strategist
                 </Heading>
                 <Text>
-                  Why waste time when the GrapplTech community has already done
-                  the heavy lifting? Snag those pre-built components and focus
-                  on what matters - making your website epic.
+                  You’ll be assigned a Dedicated Portfolio Strategist (a.k.a. your personal brand hacker). They’ll help map your portfolio’s flow, finalize the design style, lock in the features, and discuss pricing transparently.
                 </Text>
               </Box>
               {/* Innovation Hub */}
               <Box flexBasis={["100%", "49%", "30%"]} textAlign="center" mb={4}>
-                <Icon as={FaCoffee} boxSize={12} color="blue.500" />
+                <Icon as={BiSupport} boxSize={12} color="blue.500" />
                 <Heading as="h3" fontSize="xl" fontFamily={"Poppins"} mt={2}>
-                  Channel your inner couch potato coder
+                  We Build, Deploy & Support
                 </Heading>
                 <Text>
-                  Building websites shouldn't be a chore. Grab a cup of chai (or
-                  your beverage of choice) and browse our curated selection of
-                  web components.
+                  We build your stunning portfolio, deploy it with your domain, and offer post-launch support and maintenance. Your portfolio will be responsive, fast, and built to impress — every click, scroll, and tap.
                 </Text>
               </Box>
             </Flex>
@@ -150,8 +169,7 @@ function Services() {
         mb={8}
         p={2}
       >
-        Fresh Out the Oven: Community-Cooked Web Component Templates (Coming
-        Soon!)
+        Let’s Cook Your Digital Masterpiece!
       </Heading>
       <Center>
         <svg
@@ -171,11 +189,9 @@ function Services() {
         
         <center>
           <Text>
-            Our amazing Grappler community isn't just building awesome
-            components, they're whipping up some incredible web component
-            templates too! Get ready to level up your development workflow with
-            pre-built solutions you can easily customize. Stay tuned, these
-            tasty templates will be served up soon!
+            Our team’s fired up and ready to chef up your portfolio with the perfect mix of design, content, and personality. Think of it like your digital recipe — custom-coded with clean UI, juicy visuals, spicy animations, and served fresh on your own domain. Whether you're chasing internships, freelance gigs, or startup investors, your portfolio will do the talking while you do the winning.
+
+So… apron’s on. Tools are ready. Let’s cook. 🍳🔥
           </Text>
           <img src={cooking} width={"500px"} alt="img" />
         </center>
@@ -193,7 +209,7 @@ function Services() {
                 textAlign={["center"]}
                 mb={4}
               >
-                Join Us in Building the Future: Contribute to GrapplTech!
+🏆 150+ Grapplers, One Portfolio at a Time
               </Heading>
               <Center>
                 <svg
@@ -211,58 +227,43 @@ function Services() {
               </Center>
               
               <Text textAlign={"center"}>
-              We welcome your passion and creativity! Please fill out the application form below so that our team can reach out to you. By participating in this initiative, you will gain valuable experience, and we will recognize your efforts with a certificate that you can proudly add to your resume and coursework.
+              We’ve already helped 150+ Grapplers turn their skills into stunning digital portfolios — and they’re out there getting hired, booked, and noticed. Whether it’s for job interviews, freelancing, startups, or college admissions, our portfolios have become launchpads for big moves. This isn’t just web design — this is your story, your style, and your spotlight.
               <br></br>
               <br></br>
-              The main advantage of this contribution is that it is considered as an internship experience, allowing you to receive a certificate upon completion. This certificate can be a valuable addition to your resume and coursework, showcasing your skills and dedication.
-
-Ready to make an impact? Apply now and become a part of the GrapplTech community!
+              Real People. Real Growth. Real Results.
               </Text>
               <Center>
-              <a href="https://forms.gle/J94QRjhk6x5AUDmc8" target="_blank" rel="noopener noreferrer">
-              <Button size={"lg"} colorScheme="blue">
-                Click here to apply
-              </Button>
-              </a></Center>
+              <GoogleCalendarButton /></Center>
             </Box>
           </Flex>
-          
-          <Box mt={2}>
-            <Flex justifyContent="space-between" flexWrap="wrap">
-              {/* Education First */}
-              <Box flexBasis={["100%", "49%", "30%"]} textAlign="center" mb={4}>
-                <Icon as={FaFileAlt} boxSize={12} color="blue.500" />
-                <Heading as="h3" fontSize="xl" fontFamily={"Poppins"} mt={2}>
-                Fill out the application form
-                </Heading>
-                <Text>
-                Provide your personal details, resume, and explain your motivation for contributing to GrapplTech.
-                </Text>
-              </Box>
-              {/* Community Driven */}
-              <Box flexBasis={["100%", "49%", "30%"]} textAlign="center" mb={4}>
-                <Icon as={FaEye} boxSize={12} color="blue.500" />
-                <Heading as="h3" fontSize="xl" fontFamily={"Poppins"} mt={2}>
-                Review process
-                </Heading>
-                <Text>
-                Our team will carefully review your application and resume. You will be notified of the outcome within 1 week.
-                </Text>
-              </Box>
-              {/* Innovation Hub */}
-              <Box flexBasis={["100%", "49%", "30%"]} textAlign="center" mb={4}>
-                <Icon as={FaAward} boxSize={12} color="blue.500" />
-                <Heading as="h3" fontSize="xl" fontFamily={"Poppins"} mt={2}>
-                Certificate issuance
-                </Heading>
-                <Text>
-                Upon successful review and completion of your contribution, we will issue a certificate of appreciation. This will serve as an internship experience, enhancing your professional credentials.
-                </Text>
-              </Box>
-            </Flex>
-            {/* Application process */}
-            
-          </Box>
+          <Box mt={10} p={6} bg="gray.50" borderRadius="md">
+  <Heading textAlign="center" mb={4} fontFamily="Poppins">
+    💬 Hear From Our Grapplers
+  </Heading>
+  <div className="testimonial-sliderrr">
+    <div className="slider-trackk">
+      {[
+        { name: "Aarav Sharma", location: "Delhi, India", quote: "This portfolio got me my first freelance gig within a week!" },
+        { name: "Jeevan Kumar", location: "Austin, Texas", quote: "Loved how my personality came through. So clean and sharp!" },
+        { name: "Roshan Kumar", location: "Chennai, India", quote: "It’s not just a site, it’s a digital identity. GrapplTech killed it!" },
+        { name: "Vaishnavi R", location: "Dallas, Texas", quote: "I got shortlisted in 3 companies after adding this to my resume!" },
+        { name: "Nikhil Yadav", location: "Kakinada, India", quote: "Best decision ever. The animations and vibe were on point!" },
+        { name: "Arjun Patel", location: "Gujarat, India", quote: "Their strategist really understood what I needed." },
+        { name: "Waseem Ahmed", location: "Houston, Texas", quote: "Clean design. Great support. Definitely recommend!" },
+        { name: "Priya Verma", location: "Haryana, India", quote: "I landed an internship with this portfolio — it’s a career changer!" },
+        { name: "Aakash N", location: "San Antonio, Texas", quote: "Deployment and support were super smooth!" },
+        { name: "Joshni Priya", location: "Hyderabad, India", quote: "Mine looked better than templates on paid platforms.🔥" },
+      ].map((t, index) => (
+        <div className="testimoniall" key={index}>
+          <p>"{t.quote}"</p>
+          <strong>- {t.name}, {t.location}</strong>
+        </div>
+      ))}
+    </div>
+  </div>
+</Box>
+
+ {/* <iframe src="https://calendar.google.com/calendar/appointments/schedules/AcZssZ2KGwxgLYJI73sTiS81PebrfLUWoW04b4l7aoIbszfdnTwvw43XH2-LtnmV_0haia3ko2NzUPX-?gv=true" style={{border: "0",width:"100%",height:"600",frameborder:"0"}}></iframe> */}
     </>
   );
 }

@@ -12,7 +12,7 @@ const SomethingBigIsComingSection = () => {
   useEffect(() => {
     // Calculate the time left
     const today = new Date();
-    const targetDate = new Date("2025-05-28"); // Replace with your target date
+    const targetDate = new Date("2025-08-28"); // Replace with your target date
     const timeDifference = targetDate - today;
     const secondsLeft = Math.floor(timeDifference / 1000);
 

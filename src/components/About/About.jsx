@@ -9,7 +9,6 @@ import {
 import { FaGraduationCap, FaUsers, FaLightbulb, FaCrown } from 'react-icons/fa';
 import {RiCustomerService2Line} from 'react-icons/ri';
 import {MdVoiceChat} from 'react-icons/md';
-import React from "react";
 import { useEffect } from "react";
 import { Link } from "react-router-dom";
 
@@ -110,7 +109,7 @@ const About = () => {
             searching for bright talent.
           </Text>
           <Text mt={4}>
-          Since our founding in 2022, we've enrolled over 6000+ students in bootcamps, helping more than 500+ secure their first jobs and 300+ land internships. We've partnered with 50+ companies to provide exclusive opportunities and generated substantial revenue, enabling us to operate independently without external investors. Our focus is to equip students with practical skills, bridging the gap between education and industry, and helping companies find their next star employees.
+          Since our founding in 2022, we've enrolled over 1300+ students in bootcamps, helping more than 500+ secure their first jobs and 300+ land internships. We've partnered with 10+ companies to provide exclusive opportunities and generated substantial revenue, enabling us to operate independently without external investors. Our focus is to equip students with practical skills, bridging the gap between education and industry, and helping companies find their next star employees.
           </Text>
           <Text mt={4}>
             Join us in our mission to make the job search process easier,

@@ -4,7 +4,7 @@ import { Button, Stack, Text, VStack, Image, Box, Center } from "@chakra-ui/reac
 import "./home.css";
 import { Link } from "react-router-dom";
 import vg from "../../assets/images/hero2.png";
-import vg1 from "../../assets/images/coffee1.png";
+import vg1 from "../../assets/images/coffee-person.png";
 import Features from "../Features/Features";
 import FeaturesSection from "../Features/FeaturesSection";
 import Alumni from "../alumni/Alumni";

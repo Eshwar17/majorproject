@@ -73,7 +73,7 @@ function App() {
         <Route path="/request" element={<Request />} />
         <Route path="/about" element={<About />} />
         <Route path="*" element={<NotFound />} />
-        <Route path="/gtcommunitycomponents" element={<CommunityComponents />} />
+        <Route path="/portfolio-services" element={<CommunityComponents />} />
         <Route path="/workshops" element={<Services />} />
         <Route path="/resumetemplate1" element={<ResumeEditor />} />
         <Route path="/resumemaker" element={<ResumePage />} />

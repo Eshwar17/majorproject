@@ -14,3 +14,32 @@ html {
     font-family: 'ZohoPuviFontRegular', sans-serif;
 }
 
+.testimonial-sliderrr {
+  overflow: hidden;
+  position: relative;
+  width: 100%;
+  max-width: 100%;
+  margin: 0 auto;
+}
+
+.slider-trackk {
+  display: flex;
+  animation: scroll 40s linear infinite;
+  gap: 30px;
+}
+
+.testimoniall {
+  min-width: 300px;
+  max-width: 300px;
+  background: white;
+  border-radius: 12px;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+  padding: 20px;
+  font-family: 'Poppins';
+}
+
+@keyframes scroll {
+  0%   { transform: translateX(0); }
+  100% { transform: translateX(-200%); }
+}
+
