@@ -31,6 +31,7 @@ import KVaishnavi from './components/People/KVaishnavi';
 import SiddardhaKancharla from './components/People/SiddardhaKancharla';
 import RakeshJalla from './components/People/RakeshJalla';
 import BasettiVenkataAnilKumar from './components/People/BasettiVenkataAnilKumar';
+import BackendSupremacy from './components/BackendSupremacy/BackendSupremacy';
 
 function App() {
   window.addEventListener("contextmenu", (e)=>{
@@ -78,6 +79,7 @@ function App() {
         <Route path="/resumetemplate1" element={<ResumeEditor />} />
         <Route path="/resumemaker" element={<ResumePage />} />
         <Route path="/partnerregistration" element={<CampusAmbassador />} />
+        <Route path="/backendsupremacy" element={<BackendSupremacy />} />
         <Route path="/akashbellam" element={<People />} />
         <Route path="/bathinivenkatarushitha" element={<BathiniVenkataRushitha/>} />
         <Route path="/ippaturiharshavardhanreddy" element={<IppaturiHarshaVardhanReddy />} />

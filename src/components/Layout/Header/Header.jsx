@@ -51,6 +51,7 @@ function Header() {
               <LinkButton onClose={onClose} url="/" title="Home" />
               <LinkButton onClose={onClose} url="/bootcamps" title="Browse All Bootcamps" />
               <LinkButton onClose={onClose} url="/request" title="Apply For A Bootcamp" />
+              <LinkButton onClose={onClose} url="/backendsupremacy" title="Backend Supremacy in Telugu" />
               <LinkButton onClose={onClose} url="/portfolio-services" title="Portfolio Services" />
               <LinkButton onClose={onClose} url="/workshops" title="Workshops & Hackathons" />
               <LinkButton onClose={onClose} url="/resumemaker" title="GrapplTech's Resume Maker" />

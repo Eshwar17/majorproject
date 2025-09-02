@@ -1,0 +1,140 @@
+@import url('https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:wght@400;600;800&display=swap');
+.bs-body {
+  /* background: white; */
+  color: white;
+  font-family: "Poppins", sans-serif;
+  overflow-x: hidden;
+}
+
+.bs-heading {
+  font-size: 5rem;
+  font-weight: 800;
+  background: linear-gradient(90deg, #ffb800, #ff9900);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  font-family: "Bricolage Grotesque", sans-serif;
+}
+.fontt {
+  font-family: "Bricolage Grotesque", sans-serif;
+}
+.bs-subtitle {
+  color: #black;
+}
+
+.bs-offer {
+  font-weight: bold;
+  color: #ffd700;
+  animation: pulseOffer 2s infinite;
+}
+
+.bs-price-strike {
+  text-decoration: line-through;
+  color: #f87171;
+  font-size: 1rem;
+}
+
+.bs-seats {
+  color: #a5b4fc;
+  font-weight: 500;
+}
+
+.bs-timer {
+  font-size: 1.5rem;
+  font-weight: bold;
+  margin-top: 10px;
+  color: #34d399;
+}
+
+.bs-enroll-btn {
+  font-size: 1.3rem !important;
+  font-weight: 700 !important;
+  border-radius: 12px !important;
+  padding: 18px 36px !important;
+  transition: all 0.3s ease-in-out;
+}
+.bs-enroll-btn:hover {
+  transform: scale(1.08);
+  box-shadow: 0 8px 20px rgba(255, 215, 0, 0.4);
+}
+
+.bs-image {
+  max-width: 100%;
+  animation: fadeInUp 1.5s ease-in-out;
+}
+
+.bs-curriculum {
+  background: rgba(255, 255, 255, 0.05);
+  border-radius: 16px;
+  padding: 30px;
+}
+
+.bs-card {
+  background: rgba(255, 255, 255, 0.07);
+  padding: 20px;
+  border-radius: 12px;
+  text-align: left;
+  transition: transform 0.3s ease, background 0.3s ease;
+}
+.bs-card:hover {
+  transform: translateY(-8px);
+  background: rgba(255, 255, 255, 0.15);
+}
+
+.bs-bonus {
+  margin-top: 40px;
+}
+
+.bs-bonus-heading {
+  font-family: "Bricolage Grotesque", sans-serif;
+  color: #34d399;
+}
+
+/* Animations */
+@keyframes fadeInUp {
+  from {
+    transform: translateY(50px);
+    opacity: 0;
+  }
+  to {
+    transform: translateY(0);
+    opacity: 1;
+  }
+}
+
+@keyframes pulseOffer {
+  0% { transform: scale(1); }
+  50% { transform: scale(1.08); }
+  100% { transform: scale(1); }
+}
+/* Slider container */
+.testimonial-slider {
+  display: flex;
+  gap: 1rem;
+  overflow-x: auto;
+  overflow-y: hidden;  /* ✅ Prevent vertical scrollbar */
+  padding: 0.5rem;
+  scroll-behavior: smooth;
+  scrollbar-width: none; /* Firefox */
+}
+
+.testimonial-slider::-webkit-scrollbar {
+  display: none; /* Chrome/Safari ✅ */
+}
+
+/* Individual testimonial card */
+.testimonial-card {
+  flex: 0 0 auto;
+  min-width: 250px;
+  max-width: 320px;
+  background: white;
+  border-radius: 12px;
+  padding: 1rem;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
+  text-align: center;
+  transition: transform 0.3s ease;
+}
+
+.testimonial-card:hover {
+  transform: translateY(-5px);
+}
+
