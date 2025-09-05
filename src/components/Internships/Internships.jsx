@@ -96,15 +96,11 @@ const Bootcamp = ({
         <Text
           children={"Duration"}
           fontWeight={"bold"}
-          // textTransform={"uppercase"}
-          // noOfLines={"1"}
         />
         <Text
           children={creator}
           fontFamily={"body"}
           mt={0}
-          // textTransform={"uppercase"}
-          // noOfLines={"1"}
         />
       </HStack>
       <Heading
@@ -133,28 +129,14 @@ const Bootcamp = ({
           variant={"ghost"}
           onClick={() => {
             if (
-              title === "Front End Bootcamp" ||
-              title === "Bug Hunter Bootcamp" ||
-              title === "Back End Development" ||
-              title === "Full Stack Development" ||
-              title === "Javapalooza: A Comprehensive Core Java Bootcamp" ||
-              title === "C++ Wizardry: Unleashing the Magic of Programming" ||
-              title === "Python Programming Bootcamp: Building Core Skills" ||
-              title === "Data Detective Bootcamp(Data Analyst)" ||
-              title ===
-                "Reactivate Your Coding Skills: Join Our ReactJS Bootcamp Program!" ||
-              title ===
-                "JavaScript Ninja Bootcamp: Mastering the Art of Web Development" ||
-              title ===
-                "Data Alchemist: Embark on a Journey of Innovation with our Data Science Bootcamp"
-            ) {
-              window.location.href = "https://www.grappl.tech/request";
+              title === "Front End Bootcamp") {
+              window.location.href = "https://www.grappltech.in/request";
             } else {
               addToPlaylistHandler(id);
             }
           }}
         >
-          Apply
+          Registrations Closed
         </Button>
       </Stack>
     </VStack>
