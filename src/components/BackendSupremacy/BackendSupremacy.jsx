@@ -2,38 +2,35 @@ import { useEffect, useState } from "react";
 import {
   Box,
   Container,
-  Heading,
   Text,
   Flex,
   Center,
   Image,
   Icon,
-  Button,
-  Badge,
-  HStack,
-  VStack,
-  Link
+  Link,
 } from "@chakra-ui/react";
-import { motion } from "framer-motion";
 import {
-  FaPython,
-  FaDatabase,
-  FaCloudUploadAlt,
-  FaTools,
+  FaHtml5,
+  FaCss3Alt,
+  FaReact,
+  FaNodeJs,
+  FaGitAlt,
 } from "react-icons/fa";
-import { FiServer } from "react-icons/fi";
+import {
+  SiTailwindcss,
+  SiGreensock,
+  SiMongodb,
+} from "react-icons/si";
 import "./BackendSupremacy.css";
-
 import cashback from "../../assets/images/refund.png";
-import portfolios from "../../assets/images/Backend Supremacy.png";
+import portfolios from "../../assets/images/FullStackCourseThumbnail.png";
+import BackendFAQ from "./BackendFAQ";
 
 function BackendSupremacy() {
-  const MotionBox = motion(Box);
-  const MotionText = motion(Text);
   const [timeLeft, setTimeLeft] = useState({});
 
   useEffect(() => {
-    const targetDate = new Date("2025-09-15T23:59:59").getTime();
+    const targetDate = new Date("2025-09-25T23:59:59").getTime();
     const interval = setInterval(() => {
       const now = new Date().getTime();
       const distance = targetDate - now;
@@ -58,30 +55,63 @@ function BackendSupremacy() {
       {" "}
       {/* 🚀 This prevents horizontal scroll */}
       <Container maxW={"container.xl"} px={4} mt={6}>
-        <Center>
-          <Heading
-            class="headerddd"
-            children="Backend Supremacy in Telugu"
-            fontFamily={"Poppins"}
-            textAlign={["center", "center"]}
-          />
-        </Center>{" "}
-        <Center>
-          {" "}
-          <svg
-            width="260"
-            height="20"
-            viewBox="0 0 628 20"
-            fill="none"
-            xmlns="http://www.w3.org/2000/svg"
-          >
-            {" "}
-            <path
-              d="M627.986 1.00956C606.425 2.19536 584.864 3.33831 563.318 4.58126C526.8 6.68141 490.282 8.83876 453.764 10.9675C417.073 13.1105 380.369 15.2678 343.678 17.3822C326.496 18.368 309.299 19.8824 292.102 19.9967C278.063 20.0824 264.024 18.4966 249.986 17.5537C206.994 14.6535 164.016 11.6104 121.024 8.79587C90.6637 6.81001 60.2894 5.13845 29.9294 3.2526C19.9529 2.63826 9.97646 1.80961 0 0.466655C14.0388 0.466655 28.0632 0.466655 42.1021 0.466655C74.7875 0.495229 107.473 0.552373 140.158 0.552373C153.494 0.552373 166.858 -0.00475617 180.165 0.609576C188.347 0.981032 196.457 0.266665 204.611 0.580974C213.396 0.923857 222.195 0.566659 230.994 0.552373C239.779 0.552373 248.579 0.523809 257.364 0.652391C259 0.680964 260.608 1.46674 262.546 1.99535C264.986 -2.07638 269.996 1.48104 274.001 0.666691C274.876 0.480963 276.183 2.3668 276.786 2.88113C277.991 2.28108 279.671 0.680992 281.365 0.680992C317.237 0.580984 353.109 0.652418 388.981 0.680992C394.924 0.680992 400.867 0.680992 406.968 0.680992C407.212 2.56685 407.413 4.08124 407.743 6.56714C408.705 4.13839 409.35 2.50971 410.183 0.42384C418.021 0.42384 425.916 0.609499 433.811 0.352337C438.821 0.195182 442.223 1.16671 441.72 7.25288C441.964 5.58132 441.663 3.42406 442.61 2.38112C443.658 1.22389 445.811 0.852423 447.548 0.580974C449.429 0.295238 451.395 0.509558 453.821 0.509558C454.323 2.49542 454.812 4.45265 455.601 7.59575C455.73 1.95247 455.658 -0.819169 462.348 1.88103C467.228 3.85261 473.961 0.766681 479.875 0.738108C528.379 0.55238 576.897 0.552418 625.402 0.509558C626.263 0.509558 627.124 0.595229 628 0.63809C628 0.766671 628 0.880979 628 1.00956H627.986Z"
-              fill="#FEBD00"
-            />{" "}
-          </svg>{" "}
-        </Center>
+        <div class="heroj">
+          <div class="heroj-content">
+            <h1>
+              From ‘Hello World’ to ‘Hello Job Offer’<br></br><span style={{fontSize: '3rem'}}>in Just 100 Days!</span>
+            </h1>
+            <p style={{textAlign: 'left'}}>
+              Why just browse memes when you can build the websites they live on? Our Full Stack Developer in 100 Days Course takes you from HTML rookie to AI-powered coding wizard. With hands-on projects, live classes, and real deployment, you’ll be coding like a pro.
+            </p>
+            <div class="cta-group">
+              <a
+                href="https://rzp.io/rzp/gX5g3FL"
+                target="_blank"
+                rel="noopener noreferrer"
+              >
+                <button class="cta-button">Enroll Now</button>
+              </a>
+
+              <button class="cta-button-secondary">Watch Demo</button>
+            </div>
+
+            <div class="statsj-container">
+              <div class="statj-item">
+                <span class="statj-number">10+</span>
+                <span class="statj-label" style={{
+              fontSize: "1.25rem",
+              lineHeight: "1.8",
+              marginBottom: "1rem",
+            }}>Technologies</span>
+              </div>
+              <div class="statj-item">
+                <span class="statj-number">100</span>
+                <span class="statj-label" style={{
+              fontSize: "1.25rem",
+              lineHeight: "1.8",
+              marginBottom: "1rem",
+            }}>Available Seats</span>
+              </div>
+              <div class="statj-item">
+                <span class="statj-number">Rs.1599</span>
+                <span class="statj-label" style={{
+              fontSize: "1.25rem",
+              lineHeight: "1.8",
+              marginBottom: "1rem",
+            }}>Course Fee</span>
+              </div>
+            </div>
+          </div>
+
+          <div class="heroj-graphics">
+            <div class="gradient-orb"></div>
+            <div class="floating-cards">
+              <div class="cardj cardj-1"></div>
+              <div class="cardj cardj-2"></div>
+              <div class="cardj cardj-3"></div>
+            </div>
+          </div>
+        </div>
         {/* Hero Image */}
         <Center>
           <Image
@@ -92,133 +122,110 @@ function BackendSupremacy() {
             objectFit="cover"
             borderWidth={4}
             borderColor="blue.500"
-            id="backend-mastery"
+            id="fullstack-mastery"
           />
         </Center>
-        <Heading
-          as="h2"
-          fontSize="2xl"
-          fontFamily={"Poppins"}
-          textAlign={["center"]}
-          mb={4}
+        <div
+          id="prom-text"
+          style={{
+            textAlign: "center",
+            fontFamily: "Poppins, sans-serif",
+            margin: "2rem auto",
+            maxWidth: "800px",
+          }}
         >
-          {" "}
-          🎧 Learn backend like a pro, binge-worthy style. Zero prerequisites,
-          zero fear — just pure backend supremacy.{" "}
-        </Heading>{" "}
-        <Center>
-          {" "}
-          <svg
-            width="260"
-            height="20"
-            viewBox="0 0 628 20"
-            fill="none"
-            xmlns="http://www.w3.org/2000/svg"
+          <p
+            style={{
+              fontSize: "1.25rem",
+              lineHeight: "1.8",
+              marginBottom: "1rem",
+            }}
           >
-            {" "}
-            <path
-              d="M627.986 1.00956C606.425 2.19536 584.864 3.33831 563.318 4.58126C526.8 6.68141 490.282 8.83876 453.764 10.9675C417.073 13.1105 380.369 15.2678 343.678 17.3822C326.496 18.368 309.299 19.8824 292.102 19.9967C278.063 20.0824 264.024 18.4966 249.986 17.5537C206.994 14.6535 164.016 11.6104 121.024 8.79587C90.6637 6.81001 60.2894 5.13845 29.9294 3.2526C19.9529 2.63826 9.97646 1.80961 0 0.466655C14.0388 0.466655 28.0632 0.466655 42.1021 0.466655C74.7875 0.495229 107.473 0.552373 140.158 0.552373C153.494 0.552373 166.858 -0.00475617 180.165 0.609576C188.347 0.981032 196.457 0.266665 204.611 0.580974C213.396 0.923857 222.195 0.566659 230.994 0.552373C239.779 0.552373 248.579 0.523809 257.364 0.652391C259 0.680964 260.608 1.46674 262.546 1.99535C264.986 -2.07638 269.996 1.48104 274.001 0.666691C274.876 0.480963 276.183 2.3668 276.786 2.88113C277.991 2.28108 279.671 0.680992 281.365 0.680992C317.237 0.580984 353.109 0.652418 388.981 0.680992C394.924 0.680992 400.867 0.680992 406.968 0.680992C407.212 2.56685 407.413 4.08124 407.743 6.56714C408.705 4.13839 409.35 2.50971 410.183 0.42384C418.021 0.42384 425.916 0.609499 433.811 0.352337C438.821 0.195182 442.223 1.16671 441.72 7.25288C441.964 5.58132 441.663 3.42406 442.61 2.38112C443.658 1.22389 445.811 0.852423 447.548 0.580974C449.429 0.295238 451.395 0.509558 453.821 0.509558C454.323 2.49542 454.812 4.45265 455.601 7.59575C455.73 1.95247 455.658 -0.819169 462.348 1.88103C467.228 3.85261 473.961 0.766681 479.875 0.738108C528.379 0.55238 576.897 0.552418 625.402 0.509558C626.263 0.509558 627.124 0.595229 628 0.63809C628 0.766671 628 0.880979 628 1.00956H627.986Z"
-              fill="#FEBD00"
-            />{" "}
-          </svg>{" "}
-        </Center>
-        {/* Price Card */}
-        <Center mt={8}>
-          <MotionBox
-            bg="white"
-            p={6}
-            rounded="2xl"
-            shadow="2xl"
-            border="2px solid"
-            borderColor="blue.400"
-            textAlign="center"
-            w={["100%", "90%", "500px"]} // ✅ responsive width
-            maxW="100%"
+            Unlock your career with our{" "}
+            <strong style={{
+              backgroundImage:
+                "linear-gradient(135deg, #f65959ff 0%, red 100%)",
+              WebkitBackgroundClip: "text", // needed for Safari/Chrome
+              backgroundClip: "text",
+              color: "transparent",
+              fontFamily: '"Bricolage Grotesque", sans-serif',
+            }}>Full Stack Developer in 100 Days Course</strong>. Learn{" "}
+            <strong>HTML5</strong>, <strong>CSS3</strong>,{" "}
+            <strong>Tailwind CSS</strong>, <strong>ChakraUI JS</strong>,{" "}
+            <strong>ES6</strong>,<strong> ReactJS</strong>,{" "}
+            <strong>GSAP</strong>, <strong>NodeJS</strong>,{" "}
+            <strong>ExpressJS</strong>, <strong>MongoDB</strong>, and complete{" "}
+            <strong>Deployment</strong> — all in just <strong style={{
+              fontSize: "2.4rem",
+              backgroundImage:
+                "linear-gradient(135deg, #f65959ff 0%, red 100%)",
+              WebkitBackgroundClip: "text", // needed for Safari/Chrome
+              backgroundClip: "text",
+              color: "transparent",
+              fontFamily: '"Bricolage Grotesque", sans-serif',
+            }}>100 days</strong>.
+          </p>
+
+          {/* Pricing Highlight */}
+          <div style={{ textAlign: "center" }}>
+  <p
+    style={{
+      fontSize: "2rem",
+      color: "gray",
+      textDecoration: "line-through",
+      margin: 0,
+      fontFamily: '"Bricolage Grotesque", sans-serif',
+    }}
+  >
+    Rs. 7000
+  </p>
+  <p
+    style={{
+      fontSize: "3rem",
+      backgroundImage: "linear-gradient(135deg, #f65959ff 0%, red 100%)",
+      WebkitBackgroundClip: "text", // needed for Safari/Chrome
+      backgroundClip: "text",
+      color: "transparent",
+      fontFamily: '"Bricolage Grotesque", sans-serif',
+      margin: 0,
+    }}
+  >
+    Just Rs. 1599/-
+  </p>
+</div>
+
+          {/* Course Details */}
+          <div
+            style={{
+              fontSize: "1rem",
+              textAlign: "left",
+              margin: "1rem auto",
+              maxWidth: "600px",
+              lineHeight: "1.6",
+            }}
           >
-            <MotionText
-              fontSize="2xl"
-              mb={3}
-              fontWeight="bold"
-              color="gray.800"
-            >
-              💸 Early Bird Price: <b style={{ color: "#2563eb" }}>₹1499</b>{" "}
-              <Text as="span" color="red.400" textDecoration="line-through">
-                ₹6000
-              </Text>
-            </MotionText>
-
-            <Badge
-              colorScheme="green"
-              fontSize="md"
-              px={3}
-              py={1}
-              borderRadius="lg"
-              mb={4}
-            >
-              🎟 Seats: 150 Only
-            </Badge>
-
-            <VStack spacing={1} fontSize="lg" color="gray.700">
-              <Text mt={1}>
-                ⏳ Duration: <b>2 Months</b>
-              </Text>
-              <Text>
-                🗣️ Language: <b>Telugu</b>
-              </Text>
-              <Text>
-                📅 Start Date: <b>September 15, 2025</b>
-              </Text>
-              <Text>
-                ⏰ Timings: <b>7pm – 8pm Daily</b>
-              </Text>
-            </VStack>
-
-            <Text fontSize="lg" mt={5} color="blue.600">
-              👨‍🏫 Tutors: <b>Eshwar Nagaraj</b>, <b>Chaitanya Reddy</b>
-            </Text>
-
-            <VStack mt={3} spacing={0} fontSize="md" color="gray.800">
-  <HStack>
-    <Text>📜 Certificate Issuance:</Text>
-    <Badge colorScheme="green">Yes</Badge>
-  </HStack>
-  <HStack>
-    <Text>📝 Resume Guidance:</Text>
-    <Badge colorScheme="green">Yes</Badge>
-  </HStack>
-  <HStack>
-    <Text>🔗 LinkedIn Optimisation:</Text>
-    <Badge colorScheme="green">Yes</Badge>
-  </HStack>
-  <HStack>
-    <Text>🎥 Recordings Provided:</Text>
-    <Badge colorScheme="green">Yes</Badge>
-  </HStack>
-  <HStack>
-    <Text>🎯 Interview Prep Kit:</Text>
-    <Badge colorScheme="green">Yes</Badge>
-  </HStack>
-  <HStack>
-    <Text>🎉 Fun Friday Sessions:</Text>
-    <Badge colorScheme="green">Yes</Badge>
-  </HStack>
-  <HStack>
-    <Text>🤝 Mock Interviews:</Text>
-    <Badge colorScheme="green">Yes</Badge>
-  </HStack>
-</VStack>
-
-          </MotionBox>
-        </Center>
+          <Center>
+            <p>
+              <strong>Tutors:</strong> Eshwar Nagaraj, Chaitanya Reddy, Sruthi
+              Pasupuleti
+            </p>
+            <p>
+              <strong>No.of Seats:</strong> 100
+            </p></Center>
+            
+          </div>
+        </div>
         {/* Countdown */}
+        <Center>
         <Box
           mt={6}
+          mb={4}
           p={4}
-          color="black"
-          bg="yellow.100"
+          bg="red.500"
           borderRadius="md"
           fontSize="lg"
           fontWeight="bold"
+          width={"400px"}
         >
           <Center>
             {timeLeft.expired ? (
@@ -233,9 +240,9 @@ function BackendSupremacy() {
               </>
             )}
           </Center>
-        </Box>
+        </Box></Center>
         <Center>
-          <Button
+          {/* <Button
             size="lg"
             mt={4}
             colorScheme="yellow"
@@ -246,90 +253,63 @@ function BackendSupremacy() {
             rel="noopener noreferrer"
           >
             Enroll Now 🚀
-          </Button>
+          </Button> */}
+          <a
+            href="https://rzp.io/rzp/gX5g3FL"
+            target="_blank"
+            rel="noopener noreferrer"
+          >
+            <button class="cta-button">Enroll Now</button>
+          </a>
         </Center>
-        <Heading
-          class="headerddd"
-          as="h2"
-          fontSize="2xl"
-          mb={6}
-          textAlign="center"
-          fontFamily={"Poppins"}
+        <h2
+          style={{
+            fontSize: "3rem",
+            textAlign: "center",
+            backgroundImage: "linear-gradient(135deg, #f65959ff 0%, red 100%)",
+            WebkitBackgroundClip: "text", // needed for Safari/Chrome
+            backgroundClip: "text",
+            color: "transparent",
+            fontFamily: '"Bricolage Grotesque", sans-serif',
+          }}
         >
-          {" "}
-          📚 Course Curriculum{" "}
-        </Heading>
-        <Flex justifyContent="space-between" flexWrap="wrap">
-          {" "}
-          {/* Languages & Frameworks */}{" "}
-          <Box flexBasis={["100%", "49%", "30%"]} textAlign="center" mb={6}>
-            {" "}
-            <Icon as={FaPython} boxSize={12} color="yellow.400" />{" "}
-            <Heading as="h3" fontSize="xl" fontFamily={"Poppins"} mt={2}>
-              {" "}
-              Languages & Frameworks{" "}
-            </Heading>{" "}
-            <Text fontSize="sm" color="gray.600" mt={1}>
-              {" "}
-              Python 🐍, Flask ⚡, SQLAlchemy ORM for powerful backend
-              development.{" "}
-            </Text>{" "}
-          </Box>{" "}
-          {/* Databases */}{" "}
-          <Box flexBasis={["100%", "49%", "30%"]} textAlign="center" mb={6}>
-            {" "}
-            <Icon as={FaDatabase} boxSize={12} color="green.400" />{" "}
-            <Heading as="h3" fontSize="xl" fontFamily={"Poppins"} mt={2}>
-              {" "}
-              Databases{" "}
-            </Heading>{" "}
-            <Text fontSize="sm" color="gray.600" mt={1}>
-              {" "}
-              SQLite (for dev) 🛠️ and PostgreSQL (for production) 🚀.{" "}
-            </Text>{" "}
-          </Box>{" "}
-          {/* APIs */}{" "}
-          <Box flexBasis={["100%", "49%", "30%"]} textAlign="center" mb={6}>
-            {" "}
-            <Icon as={FiServer} boxSize={12} color="blue.400" />{" "}
-            <Heading as="h3" fontSize="xl" fontFamily={"Poppins"} mt={2}>
-              {" "}
-              RESTful APIs{" "}
-            </Heading>{" "}
-            <Text fontSize="sm" color="gray.600" mt={1}>
-              {" "}
-              Learn API standards 🌐 & test them using Postman 🔥.{" "}
-            </Text>{" "}
-          </Box>{" "}
-          {/* Deployment */}{" "}
-          <Box flexBasis={["100%", "49%", "30%"]} textAlign="center" mb={6}>
-            {" "}
-            <Icon as={FaCloudUploadAlt} boxSize={12} color="purple.400" />{" "}
-            <Heading as="h3" fontSize="xl" fontFamily={"Poppins"} mt={2}>
-              {" "}
-              Deployment{" "}
-            </Heading>{" "}
-            <Text fontSize="sm" color="gray.600" mt={1}>
-              {" "}
-              Deploy your apps on Render ☁️, Vercel 🚀, and GitHub Pages 💻.{" "}
-            </Text>{" "}
-          </Box>{" "}
-          {/* Extras */}{" "}
-          <Box flexBasis={["100%", "49%", "30%"]} textAlign="center" mb={6}>
-            {" "}
-            <Icon as={FaTools} boxSize={12} color="red.400" />{" "}
-            <Heading as="h3" fontSize="xl" fontFamily={"Poppins"} mt={2}>
-              {" "}
-              Extras{" "}
-            </Heading>{" "}
-            <Text fontSize="sm" color="gray.600" mt={1}>
-              {" "}
-              dotenv, Jinja2, Flask-WTF, Alembic migrations, Gunicorn & more.{" "}
-            </Text>{" "}
-          </Box>{" "}
+          Technologies Covered
+        </h2>
+        {/* Tech Stack Icons */}
+        <Flex
+          justifyContent="center"
+          alignItems="center"
+          flexWrap="wrap"
+          gap={6}
+          mb={10}
+        >
+          <Icon as={FaHtml5} boxSize={36} color="#e34f26" title="HTML5" />
+          <Icon as={FaCss3Alt} boxSize={36} color="#1572B6" title="CSS3" />
+          <Icon
+            as={SiTailwindcss}
+            boxSize={36}
+            color="#38BDF8"
+            title="Tailwind CSS"
+          />
+          <Icon as={FaReact} boxSize={36} color="#61DAFB" title="ReactJS" />
+          <Icon as={SiGreensock} boxSize={36} color="#88CE02" title="GSAP" />
+          <Icon as={FaNodeJs} boxSize={36} color="#3C873A" title="NodeJS" />
+          <Icon as={FaGitAlt} boxSize={36} color="#F1502F" title="Git" />
+          <Icon as={SiMongodb} boxSize={36} color="#47A248" title="MongoDB" />
+          <Icon viewBox="0 0 256 256" boxSize={36} title="Chakra UI">
+            <path
+              fill="#319795"
+              d="M128 0C57.308 0 0 57.308 0 128s57.308 128 128 128 128-57.308 128-128S198.692 0 128 0zm-7.394 55.007h54.435L94.006 150.93l36.6-60.285H68.96l51.646-35.638zm14.788 145.986H80.959l81.035-95.923-36.6 60.285h61.647l-51.647 35.638z"
+            />
+          </Icon>
+
+          {/* Vercel Logo */}
+          <Icon viewBox="0 0 256 256" boxSize={36} title="Vercel">
+            <path fill="black" d="M128 32L256 224H0L128 32z" />
+          </Icon>
         </Flex>
         {/* Cashback Section */}
-        <Heading
+        {/* <Heading
           class="headerddd"
           as="h1"
           textAlign="center"
@@ -342,23 +322,20 @@ function BackendSupremacy() {
         >
           {" "}
           🎉 Get 100% Cashback on Your Fees!{" "}
-        </Heading>{" "}
-        <Center>
-          {" "}
-          <svg
-            width="260"
-            height="20"
-            viewBox="0 0 628 20"
-            fill="none"
-            xmlns="http://www.w3.org/2000/svg"
-          >
-            {" "}
-            <path
-              d="M627.986 1.00956C606.425 2.19536 584.864 3.33831 563.318 4.58126C526.8 6.68141 490.282 8.83876 453.764 10.9675C417.073 13.1105 380.369 15.2678 343.678 17.3822C326.496 18.368 309.299 19.8824 292.102 19.9967C278.063 20.0824 264.024 18.4966 249.986 17.5537C206.994 14.6535 164.016 11.6104 121.024 8.79587C90.6637 6.81001 60.2894 5.13845 29.9294 3.2526C19.9529 2.63826 9.97646 1.80961 0 0.466655C14.0388 0.466655 28.0632 0.466655 42.1021 0.466655C74.7875 0.495229 107.473 0.552373 140.158 0.552373C153.494 0.552373 166.858 -0.00475617 180.165 0.609576C188.347 0.981032 196.457 0.266665 204.611 0.580974C213.396 0.923857 222.195 0.566659 230.994 0.552373C239.779 0.552373 248.579 0.523809 257.364 0.652391C259 0.680964 260.608 1.46674 262.546 1.99535C264.986 -2.07638 269.996 1.48104 274.001 0.666691C274.876 0.480963 276.183 2.3668 276.786 2.88113C277.991 2.28108 279.671 0.680992 281.365 0.680992C317.237 0.580984 353.109 0.652418 388.981 0.680992C394.924 0.680992 400.867 0.680992 406.968 0.680992C407.212 2.56685 407.413 4.08124 407.743 6.56714C408.705 4.13839 409.35 2.50971 410.183 0.42384C418.021 0.42384 425.916 0.609499 433.811 0.352337C438.821 0.195182 442.223 1.16671 441.72 7.25288C441.964 5.58132 441.663 3.42406 442.61 2.38112C443.658 1.22389 445.811 0.852423 447.548 0.580974C449.429 0.295238 451.395 0.509558 453.821 0.509558C454.323 2.49542 454.812 4.45265 455.601 7.59575C455.73 1.95247 455.658 -0.819169 462.348 1.88103C467.228 3.85261 473.961 0.766681 479.875 0.738108C528.379 0.55238 576.897 0.552418 625.402 0.509558C626.263 0.509558 627.124 0.595229 628 0.63809C628 0.766671 628 0.880979 628 1.00956H627.986Z"
-              fill="#FEBD00"
-            />{" "}
-          </svg>{" "}
-        </Center>
+        </Heading>{" "} */}
+        <h2
+          style={{
+            fontSize: "3rem",
+            textAlign: "center",
+            backgroundImage: "linear-gradient(135deg, #f65959ff 0%, red 100%)",
+            WebkitBackgroundClip: "text", // needed for Safari/Chrome
+            backgroundClip: "text",
+            color: "transparent",
+            fontFamily: '"Bricolage Grotesque", sans-serif',
+          }}
+        >
+          🎉 Get 100% Cashback on Your Fees!
+        </h2>
         <Center>
           <Image
             src={cashback}
@@ -375,12 +352,17 @@ function BackendSupremacy() {
           will send your <b>full fees back within 48 hours</b>. 💸{" "}
         </Text>{" "}
         <Text mt={4}>
-  👉 Simply share your referred members’ <b>names & emails</b> with us at{" "}
-  <Link href="mailto:refunds@grapptech.in" color="blue.500" fontWeight="bold">
-    refunds@grapptech.in
-  </Link>
-  . Our finance ninjas will get to work immediately.
-</Text>{" "}
+          👉 Simply share your referred members’ <b>names & emails</b> with us
+          at{" "}
+          <Link
+            href="mailto:refunds@grapptech.in"
+            color="red.500"
+            fontWeight="bold"
+          >
+            refunds@grapptech.in
+          </Link>
+          . Our finance ninjas will get to work immediately.
+        </Text>{" "}
         <Text mt={4}>
           {" "}
           Think of it as a cashback treasure hunt 🏴‍☠️ — you bring the crew, we
@@ -393,15 +375,20 @@ function BackendSupremacy() {
           learning journey not just valuable but literally <b>FREE</b>. 🎁{" "}
         </Text>
         {/* Testimonials */}
-        <Box mt={10} p={6} bg="gray.50" borderRadius="md">
-          <Heading
-            class="headerddd"
-            textAlign="center"
-            mb={4}
-            fontFamily="Poppins"
-          >
-            Testimonials
-          </Heading>
+        <Box mt={10} p={6} bg="" borderRadius="md">
+          <h2
+          style={{
+            fontSize: "3rem",
+            textAlign: "center",
+            backgroundImage: "linear-gradient(135deg, #f65959ff 0%, red 100%)",
+            WebkitBackgroundClip: "text", // needed for Safari/Chrome
+            backgroundClip: "text",
+            color: "transparent",
+            fontFamily: '"Bricolage Grotesque", sans-serif',
+          }}
+        >
+          Testimonials
+        </h2>
           <Box className="testimonial-sliderrr" w="100%" overflow="hidden">
             <div className="slider-trackk">
               {[
@@ -540,6 +527,7 @@ function BackendSupremacy() {
             </div>
           </Box>
         </Box>
+        <BackendFAQ />
       </Container>
     </Box>
   );

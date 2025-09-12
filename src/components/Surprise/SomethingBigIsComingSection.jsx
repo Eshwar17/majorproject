@@ -12,7 +12,7 @@ const SomethingBigIsComingSection = () => {
   useEffect(() => {
     // Calculate the time left
     const today = new Date();
-    const targetDate = new Date("2025-09-15"); // Replace with your target date
+    const targetDate = new Date("2025-09-25"); // Replace with your target date
     const timeDifference = targetDate - today;
     const secondsLeft = Math.floor(timeDifference / 1000);
 
@@ -83,7 +83,7 @@ const SomethingBigIsComingSection = () => {
   textAlign={"center"}
   fontWeight="bold"
 >
-  Backend Supremacy in Telugu
+  Full Stack Developer in 100 days
 </Text>
 
           <svg width="260" height="20" viewBox="0 0 628 20" fill="none" xmlns="http://www.w3.org/2000/svg">
@@ -97,17 +97,17 @@ const SomethingBigIsComingSection = () => {
   px={[2, 6]}
 >
   🎓 At <b>GrapplTech</b>, we’re thrilled to bring you our flagship course —  
-  <b>Backend Supremacy in Telugu</b>.  
+  <b>Full Stack Developer in 100 days</b>.  
   This is a <span style={{ color: "#2563eb" }}>LIVE course</span> where you’ll
-  master backend development with hands-on projects, expert mentorship, and
+  master full stack development with hands-on projects, expert mentorship, and
   real-world case studies. Whether you’re just starting your coding journey or
-  aiming to level up your backend skills, this program is designed to take you
+  aiming to level up your development skills, this program is designed to take you
   to the next level. 🚀
   <br /><br />
   👉 Seats are limited, so don’t miss out!  
   <br />
   <a
-    href="/BackendSupremacy"
+    href="/fullstack-supremacy"
     style={{
       color: "#F59E0B",
       fontWeight: "bold",
