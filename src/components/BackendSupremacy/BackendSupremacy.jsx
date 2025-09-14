@@ -20,6 +20,7 @@ import {
   SiTailwindcss,
   SiGreensock,
   SiMongodb,
+  SiJavascript 
 } from "react-icons/si";
 import "./BackendSupremacy.css";
 import cashback from "../../assets/images/refund.png";
@@ -71,8 +72,12 @@ function BackendSupremacy() {
               >
                 <button class="cta-button">Enroll Now</button>
               </a>
-
-              <button class="cta-button-secondary">Watch Demo</button>
+<a
+                href="https://youtu.be/1yFNEaEQm2w"
+                target="_blank"
+                rel="noopener noreferrer"
+              >
+              <button class="cta-button-secondary">Watch Demo</button></a>
             </div>
 
             <div class="statsj-container">
@@ -93,12 +98,12 @@ function BackendSupremacy() {
             }}>Available Seats</span>
               </div>
               <div class="statj-item">
-                <span class="statj-number">Rs.1599</span>
+                <span class="statj-number">Sep 25 2025</span>
                 <span class="statj-label" style={{
               fontSize: "1.25rem",
               lineHeight: "1.8",
               marginBottom: "1rem",
-            }}>Course Fee</span>
+            }}>Starts On</span>
               </div>
             </div>
           </div>
@@ -151,7 +156,7 @@ function BackendSupremacy() {
               fontFamily: '"Bricolage Grotesque", sans-serif',
             }}>Full Stack Developer in 100 Days Course</strong>. Learn{" "}
             <strong>HTML5</strong>, <strong>CSS3</strong>,{" "}
-            <strong>Tailwind CSS</strong>, <strong>ChakraUI JS</strong>,{" "}
+            <strong>Tailwind CSS, JS</strong>, <strong>ChakraUI JS</strong>,{" "}
             <strong>ES6</strong>,<strong> ReactJS</strong>,{" "}
             <strong>GSAP</strong>, <strong>NodeJS</strong>,{" "}
             <strong>ExpressJS</strong>, <strong>MongoDB</strong>, and complete{" "}
@@ -291,6 +296,7 @@ function BackendSupremacy() {
             color="#38BDF8"
             title="Tailwind CSS"
           />
+          <Icon as={SiJavascript} boxSize={36} color="#F7DF1E" title="JavaScript" />
           <Icon as={FaReact} boxSize={36} color="#61DAFB" title="ReactJS" />
           <Icon as={SiGreensock} boxSize={36} color="#88CE02" title="GSAP" />
           <Icon as={FaNodeJs} boxSize={36} color="#3C873A" title="NodeJS" />
@@ -346,7 +352,7 @@ function BackendSupremacy() {
         </Center>
         <Text fontSize="lg" mt={4}>
           {" "}
-          Want your course fees back? Easy peasy! 🍋 Refer <b>7 friends</b>{" "}
+          Want your course fees back? Easy peasy! 🍋 Refer <b>3 friends</b>{" "}
           using your unique referral code (
           <b>Referrer Full Name + Phone Number</b>) and once they join, our team
           will send your <b>full fees back within 48 hours</b>. 💸{" "}
