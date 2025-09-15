@@ -80,6 +80,7 @@ function App() {
         <Route path="/resumemaker" element={<ResumePage />} />
         <Route path="/partnerregistration" element={<CampusAmbassador />} />
         <Route path="/fullstack-supremacy" element={<BackendSupremacy />} />
+        <Route path="/backendsupremacy" element={<BackendSupremacy />} />
         <Route path="/akashbellam" element={<People />} />
         <Route path="/bathinivenkatarushitha" element={<BathiniVenkataRushitha/>} />
         <Route path="/ippaturiharshavardhanreddy" element={<IppaturiHarshaVardhanReddy />} />
