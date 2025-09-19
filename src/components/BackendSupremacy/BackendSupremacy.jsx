@@ -104,7 +104,7 @@ function BackendSupremacy() {
                 </span>
               </div>
               <div class="statj-item">
-                <span class="statj-number">100</span>
+                <span class="statj-number">23</span>
                 <span
                   class="statj-label"
                   style={{
