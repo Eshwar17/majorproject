@@ -53,7 +53,7 @@ const BackendFAQ = () => {
           </h2>
           <AccordionPanel>
             HTML5, CSS3, Tailwind CSS, ChakraUI JS, ES6, ReactJS, GSAP,
-            NodeJS, ExpressJS, MongoDB, and Deployment.
+            Backend(JS Heavy), Backend(Python Heavy) and Deployment.
           </AccordionPanel>
         </AccordionItem>
 
@@ -189,7 +189,7 @@ const BackendFAQ = () => {
             </AccordionButton>
           </h2>
           <AccordionPanel>
-            The upcoming batch starts on <strong>25th September 2025</strong>.
+            The upcoming batch starts on <strong>15th October 2025</strong>(Second Batch).
           </AccordionPanel>
         </AccordionItem>
       </Accordion>

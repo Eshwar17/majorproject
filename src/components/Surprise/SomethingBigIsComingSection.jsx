@@ -12,7 +12,7 @@ const SomethingBigIsComingSection = () => {
   useEffect(() => {
     // Calculate the time left
     const today = new Date();
-    const targetDate = new Date("2025-09-25"); // Replace with your target date
+    const targetDate = new Date("2025-10-15"); // Replace with your target date
     const timeDifference = targetDate - today;
     const secondsLeft = Math.floor(timeDifference / 1000);
 
@@ -114,7 +114,7 @@ const SomethingBigIsComingSection = () => {
       textDecoration: "underline",
     }}
   >
-    Click here to explore the course details & enroll now!
+    Next Batch Starts From October 15th 2025
   </a>
 </Text>
 

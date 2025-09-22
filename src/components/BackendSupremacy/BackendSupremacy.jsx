@@ -35,7 +35,7 @@ function BackendSupremacy() {
   const [timeLeft, setTimeLeft] = useState({});
 
   useEffect(() => {
-    const targetDate = new Date("2025-09-25T23:59:59").getTime();
+    const targetDate = new Date("2025-10-15T23:59:59").getTime();
     const interval = setInterval(() => {
       const now = new Date().getTime();
       const distance = targetDate - now;
@@ -104,7 +104,7 @@ function BackendSupremacy() {
                 </span>
               </div>
               <div class="statj-item">
-                <span class="statj-number">23</span>
+                <span class="statj-number">100</span>
                 <span
                   class="statj-label"
                   style={{
@@ -117,7 +117,7 @@ function BackendSupremacy() {
                 </span>
               </div>
               <div class="statj-item">
-                <span class="statj-number">Sep 25 2025</span>
+                <span class="statj-number">Oct 15 2025</span>
                 <span
                   class="statj-label"
                   style={{
