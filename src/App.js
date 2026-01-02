@@ -34,9 +34,9 @@ import BasettiVenkataAnilKumar from './components/People/BasettiVenkataAnilKumar
 import BackendSupremacy from './components/BackendSupremacy/BackendSupremacy';
 
 function App() {
-  window.addEventListener("contextmenu", (e)=>{
-    e.preventDefault();
-  })
+  // window.addEventListener("contextmenu", (e)=>{
+  //   e.preventDefault();
+  // })
   useEffect(() => {
     // Function to change the title dynamically
     function changeTitle() {
