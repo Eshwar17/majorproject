@@ -1,66 +1,61 @@
-import React from 'react'
-import './Alumni.css';
-import PixelDrive from '../../assets/images/PixelDrive.png'
-import DigitalCarta from '../../assets/images/DigitalCarta.png'
-import gratisgateway from '../../assets/images/gratisgateway.png'
-import LinguiConnect from '../../assets/images/InternPixelLogo.png'
-import multiverseDevco from '../../assets/images/DigitalCarta.png'
-import palateplethora from '../../assets/images/palateplethora.png'
-import PennyQuiz from '../../assets/images/saltsphere.png'
-import promptgenix from '../../assets/images/promptgenix.png'
-import zenithsync from '../../assets/images/zenithsync.png'
-import saltsphere from '../../assets/images/saltsphere.png'
+import React from "react";
+import { motion } from "framer-motion";
+import "./Alumni.css";
 
-const Alumni = () => {
+import PixelDrive from "../../assets/images/PixelDrive.png";
+import DigitalCarta from "../../assets/images/DigitalCarta.png";
+import gratisgateway from "../../assets/images/MVPifyLogo.png";
+import LinguiConnect from "../../assets/images/NRICSLogo.png";
+import palateplethora from "../../assets/images/InstaDevLogo.png";
+import PennyQuiz from "../../assets/images/LetscrftLogo.png";
+import promptgenix from "../../assets/images/ODCLogo.png";
+import zenithsync from "../../assets/images/NRILogo.png";
+import saltsphere from "../../assets/images/saltsphere.png";
+
+const logos = [
+  zenithsync,
+  promptgenix,
+  PixelDrive,
+  DigitalCarta,
+  gratisgateway,
+  LinguiConnect,
+  palateplethora,
+  PennyQuiz,
+  saltsphere,
+];
+
+const MarqueeRow = ({ direction = "left", speed = 120 }) => {
   return (
-    <div className="bodys">
-        <div className="slider">
-	<div className="slide-track">
-	<div className="slide">
-			<img src={zenithsync} height="100" width="250" alt="companylogo" />
-		</div>
-		<div className="slide">
-			<img src={promptgenix} height="100" width="250" alt="companylogo" />
-		</div>
-		<div className="slide">
-			<img src={PixelDrive} height="100" width="250" alt="companylogo" />
-		</div>
-		<div className="slide">
-			<img src={DigitalCarta} height="100" width="250" alt="companylogo" />
-		</div>
-		<div className="slide">
-			<img src={gratisgateway} height="100" width="250" alt='img'/>
-		</div>
-		<div className="slide">
-			<img src={LinguiConnect} height="100" width="250" alt="companylogo" />
-		</div>
-		<div className="slide">
-			<img src={multiverseDevco} height="100" width="250" alt="companylogo" />
-		</div>
-		<div className="slide">
-			<img src={palateplethora} height="100" width="250" alt="companylogo" />
-		</div>
-		<div className="slide">
-			<img src={PennyQuiz} height="100" width="250" alt="companylogo" />
-		</div>
-		<div className="slide">
-			<img src={promptgenix} height="100" width="250" alt="companylogo" />
-		</div>
-		
-		<div className="slide">
-			<img src={saltsphere} height="100" width="250" alt="companylogo" />
-		</div>
-		<div className="slide">
-			<img src={PixelDrive} height="100" width="250" alt="companylogo" />
-		</div>
-		<div className="slide">
-			<img src={zenithsync} height="100" width="250" alt="companylogo" />
-		</div>
-       
-	</div>
-</div>
-</div>
-  )
-}
+    <div className="marquee-wrapper">
+      <motion.div
+        className="marquee-track"
+        animate={{
+          x: direction === "left" ? ["0%", "-50%"] : ["-50%", "0%"],
+        }}
+        transition={{
+          duration: speed,
+          ease: "linear",
+          repeat: Infinity,
+        }}
+      >
+        {[...logos, ...logos].map((logo, index) => (
+          <div className="marquee-item" key={index}>
+            <img src={logo} alt="company-logo" />
+          </div>
+        ))}
+      </motion.div>
+    </div>
+  );
+};
 
-export default Alumni
+export default function Alumni() {
+  return (
+    <div className="alumni-container">
+      {/* Row 1 → Left */}
+      <MarqueeRow direction="left" speed={160} />
+
+      {/* Row 2 → Right */}
+      <MarqueeRow direction="right" speed={200} />
+    </div>
+  );
+}

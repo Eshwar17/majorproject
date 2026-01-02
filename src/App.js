@@ -32,6 +32,7 @@ import SiddardhaKancharla from './components/People/SiddardhaKancharla';
 import RakeshJalla from './components/People/RakeshJalla';
 import BasettiVenkataAnilKumar from './components/People/BasettiVenkataAnilKumar';
 import BackendSupremacy from './components/BackendSupremacy/BackendSupremacy';
+import BootcampsPage from './components/Bootcamps/Bootcamps';
 
 function App() {
   // window.addEventListener("contextmenu", (e)=>{
@@ -69,7 +70,8 @@ function App() {
       <Header />
       <Routes>
         <Route path="/" element={<Home />} />
-        <Route path="/bootcamps" element={<Internships />} />
+        {/* <Route path="/bootcamps" element={<Internships />} /> */}
+        <Route path="/bootcamps" element={<BootcampsPage />} />
         <Route path="/contact" element={<Contact />} />
         <Route path="/request" element={<Request />} />
         <Route path="/about" element={<About />} />
