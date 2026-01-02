@@ -17,6 +17,7 @@
     color: rgb(104, 159, 243);
   }
   h2{
+    font-family: Bricolage Grotesque;
     color: rgb(9, 86, 202);
     font-size:1rem;
     font-weight:bolder;
@@ -27,7 +28,7 @@
   
   .h1 span {
     font-weight: 600;
-    color: rgb(9, 86, 202);
+    color: #FFA900;
     font-size: 1rem;
   }
   
@@ -58,21 +59,21 @@
   }
   
   .b1 {
-    border-color: hsl(180, 62%, 55%);
+    border-color: #CA3A31;
     /* transform: translateY(50%); */
   }
   
   .b2 {
-    border-color: hsl(0, 78%, 62%);
+    border-color: #FFA900;
   }
   
   .b3 {
-    border-color: hsl(212, 86%, 64%);
+    border-color: #82B536;
     /* transform: translateY(50%); */
   }
   
   .b4 {
-    border-color: hsl(34, 97%, 64%);
+    border-color: #028EC4;
   }
   
   .img {

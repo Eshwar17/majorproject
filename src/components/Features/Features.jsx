@@ -1,9 +1,9 @@
 import React from 'react'
 import './Features.css';
-import supervisor from './img/team-lunch1.jpg';
-import karma from './img/icon-karma.png';
-import calculator from './img/icon-calculator.png';
-import teamBuilder from './img/icon-team-builder.png';
+import supervisor from './img/whygrptch2.svg';
+import karma from './img/whygrptch4.svg';
+import calculator from './img/whygrptch3.svg';
+import teamBuilder from './img/whygrptch1.svg';
 
 const Features = () => {
   return (
@@ -16,7 +16,7 @@ const Features = () => {
         <div class="box b1">
           <h2>Grappler Chowdown</h2>
           <p>At GrapplTech, we believe in creating a community of top-performing grapplers who are passionate about learning and growing. Rewarding our top 10 grapplers with team lunches to foster a positive team dynamic and celebrate their hard work and dedication. Join us at GrapplTech and strive for excellence!</p>
-          <img class="img" src={supervisor} width="120" alt="Supervisor" />
+          <img class="img" src={supervisor} alt="Supervisor" />
         </div>
       </div>
 
