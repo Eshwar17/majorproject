@@ -32,7 +32,7 @@ const Features = () => {
         <div class="box b4">
           <h2>Dedicated Mentor</h2>
           <p>GrapplTech's one-to-one mentorship feature connects students and recent graduates with experienced mentors who can provide guidance, support, and valuable industry insights to help them succeed in their chosen career paths. Join us today to unlock the power of mentorship and accelerate your career growth!</p>
-          <img class="img" src={karma} alt="Karma" />
+          <img class="img" src={calculator} alt="Karma" />
         </div>
       </div>
 
@@ -42,7 +42,7 @@ const Features = () => {
           <p>
           GrapplTech's client project feature provides students and recent graduates with the opportunity to work on real-world projects for top companies, gaining hands-on experience and valuable skills to add to their resumes. Join us today to take your bootcamp experience to the next level!
           </p>
-          <img class="img" src={calculator} alt="Calculator" />
+          <img class="img" src={karma} alt="Calculator" />
         </div>
       </div>
     </div>

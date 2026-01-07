@@ -27,6 +27,7 @@ import { motion, useScroll, useTransform } from "framer-motion";
 import heroImg from "../../assets/images/grp-hero.png"; // <-- Replace with your image
 import { useColorModeValue } from "@chakra-ui/react";
 import AnimatedUnderline from "../Underlines/AnimatedUnderline";
+import AnimatedUnderline1 from "../Underlines/AnimatedUnderline1";
 
 const Stat = ({ icon: Icon, number, label }) => (
   <HStack spacing={3}>
@@ -254,7 +255,7 @@ function Home() {
           </Text>
          
         </Center>
- <AnimatedUnderline />
+ <AnimatedUnderline1 />
         {/* Tagline */}
         <Center>
           <Text
@@ -307,8 +308,8 @@ function Home() {
           <VStack
             flex="1"
             spacing={2}
-            align={["center", "flex-start"]} // 👈 key fix
-            textAlign={["center", "left"]} // 👈 key fix
+            align={["center", "flex-start"]}
+            textAlign={["center", "left"]} 
           >
             {/* MAIN HEADING */}
             <Text
@@ -320,7 +321,7 @@ function Home() {
             >
               Coffee Allowance at GrapplTech
             </Text>
-<AnimatedUnderline />
+<AnimatedUnderline1 />
             {/* Decorative underline */}
             <Box className="w-64 h-1 bg-[#FEBD00] rounded-full" />
 
@@ -385,7 +386,7 @@ function Home() {
           GrapplTech Xperience
         </Text>
       </Center>
-<AnimatedUnderline />
+<AnimatedUnderline1 />
       {/* Tagline */}
       <Center>
         <Text
@@ -432,7 +433,7 @@ function Home() {
             Our Active Client Engagements
           </Text>
         </Center>
-<AnimatedUnderline />
+<AnimatedUnderline1 />
         <Text
           textAlign={"center"}
           fontSize={"1rem"}
@@ -458,7 +459,7 @@ function Home() {
           GrapplTech's Trailbazing Path
         </Text>
       </Center>
-      <AnimatedUnderline />
+      <AnimatedUnderline1 />
       <Text
         textAlign={"center"}
         fontSize={"1.7rem"}

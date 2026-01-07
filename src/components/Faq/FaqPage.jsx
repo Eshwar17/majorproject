@@ -10,7 +10,7 @@ import {
   Center,
   useColorModeValue
 } from '@chakra-ui/react';
-import AnimatedUnderline from '../Underlines/AnimatedUnderline';
+import AnimatedUnderline from '../Underlines/AnimatedUnderline1';
 
 const FaqPage = () => {
   return (

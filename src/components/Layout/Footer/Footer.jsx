@@ -1,112 +1,148 @@
 import {
   Box,
   Heading,
-  HStack,
-  Stack,
   Text,
+  Button,
+  Stack,
   VStack,
   Link as ChakraLink,
-  Divider,
 } from "@chakra-ui/react";
-import React from "react";
 import { Link } from "react-router-dom";
-import { TiSocialLinkedinCircular, TiSocialTwitter } from "react-icons/ti";
-import { FaYoutube } from "react-icons/fa";
-import "./Footer.css";
 
 const Footer = () => {
+  const bg = "black";
+  const textMuted = "gray.400";
+
   return (
-    <Box bg="blackAlpha.900" color="white" py={10} px={6}>
+    <Box bg={bg} color="white" px={[1, 10, 20]} pt={20} pb={10} position="relative">
+      {/* ================= TOP CONTENT ================= */}
       <Stack
         direction={["column", "row"]}
-        spacing={10}
         justify="space-between"
-        align={["flex-start", "center"]}
+        align={["flex-start", "flex-start"]}
+        spacing={16}
+        zIndex={2}
+        position="relative"
       >
-        {/* Column 1: Branding */}
-        <VStack align="flex-start" spacing={4} maxW="400px">
-  <Heading
-  as="h1"
-  fontSize={["3xl", "4xl", "5xl"]}
-  fontWeight="extrabold"
-  lineHeight="short"
-  fontFamily='"Bricolage Grotesque", sans-serif'
-  bgGradient="linear(to-r, teal.100, blue.400)"
-  bgClip="text"
->
-  GrapplTech
-</Heading>
-
-
-  <Text fontSize={["md", "lg"]} color="gray.300" fontWeight="medium">
-    Empowering innovation, internships, and careers for the next-gen workforce.
-  </Text>
-
-  <Text fontSize="sm" color="gray.500">
-    © {new Date().getFullYear()} GrapplTech. All rights reserved.
-  </Text>
-</VStack>
-
-
-        {/* Column 2: Quick Links */}
-        <VStack align="flex-start" spacing={2}>
-          <Heading class="mainHeading1" size="sm" mb={2} textTransform="uppercase" color="teal.300">
-            Quick Links
+        {/* LEFT BLOCK */}
+        <VStack align="flex-start" spacing={6} p={6} maxW="520px">
+          <Heading
+            fontFamily="Bricolage Grotesque"
+            fontSize={["3xl", "4xl", "5xl"]}
+            fontWeight="900"
+            lineHeight="1.2"
+          >
+            Grapple First. <br />
+            Execute Better.
           </Heading>
-          <ChakraLink as={Link} to="/bootcamps">Bootcamps</ChakraLink>
-          <ChakraLink as={Link} to="/workshops">Workshops</ChakraLink>
-          <ChakraLink as={Link} to="/portfolio-services">Portfolio Services</ChakraLink>
-          <ChakraLink as={Link} to="/resumemaker">Resume Maker</ChakraLink>
-          <ChakraLink as={Link} to="/partnerregistration">Partner Registration</ChakraLink>
-          <ChakraLink as={Link} to="/about">About Us</ChakraLink>
-          <ChakraLink as={Link} to="/contact">Contact</ChakraLink>
-          <ChakraLink as={Link} to="/request">Request</ChakraLink>
+
+          <Button
+            as={Link}
+            to="/contact"
+            size="lg"
+            bg="white"
+            color="black"
+            borderRadius="none"
+            px={10}
+            _hover={{ bg: "gray.200" }}
+            rightIcon={<span>→</span>}
+          >
+            Let’s Talk
+          </Button>
+
+          <Box p={6}>
+            <Text fontSize="sm" color={textMuted}>
+              Reach out us via:
+            </Text>
+            <Text fontSize="md" fontWeight="600">
+              support@grappltech.in
+            </Text>
+          </Box>
         </VStack>
 
-        {/* Column 3: Contact + Socials */}
-        <VStack align="flex-start" spacing={2}>
-          <Heading class="mainHeading1" size="sm" mb={2} textTransform="uppercase" color="teal.300">
-            Contact Us
-          </Heading>
-          <Text fontSize="sm">📩 careers@grappltech.in</Text>
-          <Text fontSize="sm">📩 partners-operations@grappltech.in</Text>
-          <Text fontSize="sm">📩 hiring@grappltech.in</Text>
-          <Text fontSize="sm">📩 support@grappltech.in</Text>
-          <Text fontSize="sm">📞 +91 8099523442</Text>
+        {/* RIGHT BLOCK */}
+        <Stack direction={["column", "row"]} p={6} spacing={20}>
+          {/* NAV LINKS */}
+          <VStack align="flex-start" spacing={2}>
+            {["Bootcamps", "About", "Proofolio", "Careers", "Contact", "Partner with us"].map(
+              (item) => (
+                <ChakraLink
+                  key={item}
+                  as={Link}
+                  to={`/${item.toLowerCase()}`}
+                  fontSize="sm"
+                  _hover={{ textDecoration: "underline" }}
+                >
+                  {item}
+                </ChakraLink>
+              )
+            )}
+          </VStack>
 
-          <HStack spacing={5} pt={3} fontSize="2xl">
-            <a
-              href="https://www.linkedin.com/company/grappltech/"
-              target="_blank"
-              rel="noopener noreferrer"
+          {/* SOCIAL + LEGAL */}
+          <VStack align="flex-start" spacing={3}>
+            <ChakraLink href="https://www.linkedin.com/company/grappltech/" isExternal>
+              LinkedIn ↗
+            </ChakraLink>
+            <ChakraLink href="https://twitter.com/GrapplTech" isExternal>
+              Twitter ↗
+            </ChakraLink>
+            <ChakraLink
+              href="https://www.youtube.com/@GrapplTech%E0%B0%A4%E0%B1%86%E0%B0%B2%E0%B1%81%E0%B0%97%E0%B1%81"
+              isExternal
             >
-              <TiSocialLinkedinCircular />
-            </a>
-            <a
-              href="https://twitter.com/GrapplTech"
-              target="_blank"
-              rel="noopener noreferrer"
-            >
-              <TiSocialTwitter />
-            </a>
-            <a
-    href="https://www.youtube.com/@GrapplTech%E0%B0%A4%E0%B1%86%E0%B0%B2%E0%B1%81%E0%B0%97%E0%B1%81"
-    target="_blank"
-    rel="noopener noreferrer"
-  >
-    <FaYoutube color="red" />
-  </a>
-          </HStack>
-        </VStack>
+              YouTube ↗
+            </ChakraLink>
+
+            <Box pt={6}>
+              <Text fontSize="sm">India, USA</Text>
+              <Text fontSize="sm">Remote-first</Text>
+            </Box>
+
+            <Box pt={4}>
+              <Text fontSize="sm">Terms & Conditions</Text>
+              <Text fontSize="sm">Privacy Policy</Text>
+            </Box>
+          </VStack>
+        </Stack>
       </Stack>
 
-      <Divider my={6} borderColor="gray.700" />
+      {/* ================= HUGE BACKGROUND TEXT ================= */}
+      {/* ================= HUGE BACKGROUND TEXT ================= */}
 
-      {/* Bottom Bar */}
-      <Text fontSize="xs" textAlign="center" color="gray.500">
-        Built with ❤️ by GrapplTech
-      </Text>
+
+
+      {/* ================= BOTTOM LINE ================= */}
+      <Box p={6}>
+        <Text fontSize="xs" color={textMuted}>
+          © {new Date().getFullYear()} GrapplTech. Built with intent.
+        </Text>
+      </Box>
+
+      <Box
+  mt={4}
+  position="relative"
+  overflow="hidden"
+  zIndex={1}
+  textAlign="center"
+>
+  <Text
+    fontFamily="Bricolage Grotesque"
+    fontSize="clamp(4rem, 18vw, 18rem)"
+    fontWeight="800"
+    lineHeight="0.9"
+    letterSpacing="-0.06em"
+    opacity={0.90}
+    userSelect="none"
+    whiteSpace={["normal", "nowrap"]}
+    wordBreak="break-word"
+  >
+    GRAPPLTECH
+  </Text>
+</Box>
     </Box>
+
+    
   );
 };
 

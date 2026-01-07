@@ -1,6 +1,7 @@
 import { Box, Flex, Text, Image, VStack, Badge, Center, useColorModeValue } from "@chakra-ui/react";
 import { useEffect, useState } from "react";
 import AnimatedUnderline from "../Underlines/AnimatedUnderline";
+import newLaunchImg from "../../assets/images/NewLaunchImage.png";
 
 const SomethingBigIsComingSection = () => {
   const [timeLeft, setTimeLeft] = useState({
@@ -53,7 +54,7 @@ const SomethingBigIsComingSection = () => {
       {/* Blurred Image on the left */}
       <Image
         src={
-          "https://img.freepik.com/free-vector/flat-girl-headphones-table-talking-with-friends-online-young-woman-working-from-home-using-computer-group-video-conference-collective-virtual-team-building-with-clients-colleagues_88138-528.jpg?t=st=1717145564~exp=1717149164~hmac=3a51f3e1bf9e0c5f7c7a22dd8e531f4dda3a2db0d926ee54051b89bc73b9ab02&w=996"
+          newLaunchImg
         }
         alt="Remote work"
         w={{ base: "80%", md: "40%" }}

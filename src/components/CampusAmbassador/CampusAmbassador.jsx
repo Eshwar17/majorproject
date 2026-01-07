@@ -1,386 +1,432 @@
 import {
-  Container,
-  Heading,
-  VStack,
-  Button,
   Box,
-  FormLabel,
-  Input,
-  Textarea,
+  Heading,
+  Text,
   Center,
   Image,
-  Flex,
-  Text,
+  SimpleGrid,
+  Button,
+  useColorModeValue,
+  VStack,
+  HStack,
+  Select,
+  Input,
+  Divider,
+  Switch,
+  Badge,
 } from "@chakra-ui/react";
-import React, { useState, useEffect } from "react";
 import { Link } from "react-router-dom";
+import { useState } from "react";
+import { Line } from "react-chartjs-2";
+import { motion } from "framer-motion";
+import AnimatedUnderline1 from "../Underlines/AnimatedUnderline1";
+import PartnerIllustration from "../../assets/images/PartnerIllusration.gif";
+import PartnerWhySection from "./PartnerWhySection";
 
+/* ================= CONSTANTS ================= */
 
-const CampusAmbassador = () => {
-  const [isDesktop, setIsDesktop] = useState(false);
+const PRIMARY = "#028EC4";
 
-  useEffect(() => {
-    const chatElement = document.getElementById("whats-chat");
-    const chatTopRightElement = document.getElementById("chat-top-right");
-    const sendBtnElement = document.getElementById("send-btn");
+/* ================= PARTNER TYPES ================= */
 
-    function showchatbox() {
-      const chatBoxElement = document.getElementById("chat-box");
-      if (chatBoxElement) {
-        chatBoxElement.style.right = "8%";
-      }
-    }
+const partnerTypes = [
+  { key: "student", label: "College Student / Campus Ambassador", percent: 15 },
+  { key: "faculty", label: "Faculty / Mentor", percent: 20 },
+  { key: "individual", label: "Individual / Influencer", percent: 25 },
+  { key: "college", label: "Principal / Institution", percent: 30 },
+  { key: "training", label: "Training Partner / EdTech", percent: 35 },
+];
 
-    function closechatbox() {
-      const chatBoxElement = document.getElementById("chat-box");
-      if (chatBoxElement) {
-        chatBoxElement.style.right = "-500px";
-      }
-    }
+/* ================= LOCAL TESTIMONIALS ================= */
 
-    function showchatboxtime() {
-      setTimeout(launchbox, 5000);
-    }
+const testimonials = [
+  {
+    name: "Dr. Suresh Kumar",
+    role: "Faculty – Chennai",
+    image: "https://randomuser.me/api/portraits/men/45.jpg",
+    text: "GrapplTech’s programs align perfectly with industry needs and student outcomes.",
+  },
+  {
+    name: "Anjali R",
+    role: "Student – Tirupati",
+    image: "https://randomuser.me/api/portraits/women/65.jpg",
+    text: "The bootcamp helped me transition confidently into real-world development.",
+  },
+  {
+    name: "Rohit Sharma",
+    role: "Student – Hyderabad",
+    image: "https://randomuser.me/api/portraits/men/22.jpg",
+    text: "Live mentorship and projects made learning practical and effective.",
+  },
+  {
+    name: "Prof. Lakshmi Devi",
+    role: "Faculty – Anantapur",
+    image: "https://randomuser.me/api/portraits/women/52.jpg",
+    text: "The partner model is transparent and ideal for academic collaboration.",
+  },
+  {
+    name: "Karthik S",
+    role: "Student – Tamil Nadu",
+    image: "https://randomuser.me/api/portraits/men/58.jpg",
+    text: "Clear curriculum and guidance helped me choose the right tech career.",
+  },
+];
 
-    function launchbox() {
-      const chatBoxElement = document.getElementById("chat-box");
-      if (chatBoxElement) {
-        chatBoxElement.style.right = "8%";
-      }
-    }
+/* ================= TESTIMONIAL SLIDER ================= */
 
-    function sendmsg() {
-      const msgElement = document.getElementById("whats-in");
-      if (msgElement) {
-        var msg = msgElement.value;
-        var relmsg = msg.replace(/ /g, "%20");
-        window.open(
-          "https://api.whatsapp.com/send?phone=918099523442&text=" + relmsg,
-          "_blank"
-        );
-      }
-    }
+const TestimonialSlider = () => (
+  <Box overflow="hidden" w="100%" py={6}>
+    <motion.div
+      style={{ display: "flex", gap: "24px" }}
+      animate={{ x: ["0%", "-50%"] }}
+      transition={{ duration: 40, repeat: Infinity, ease: "linear" }}
+    >
+      {[...testimonials, ...testimonials].map((t, i) => (
+        <Box
+          key={i}
+          minW="340px"
+          bg="white"
+          p={6}
+          borderRadius="xl"
+          boxShadow="lg"
+        >
+          <HStack spacing={4} mb={4}>
+            <Image src={t.image} boxSize="50px" borderRadius="full" />
+            <Box>
+              <Text fontWeight="700">{t.name}</Text>
+              <Text fontSize="sm" color="gray.500">
+                {t.role}
+              </Text>
+            </Box>
+          </HStack>
+          <Text fontSize="sm" color="gray.600">
+            “{t.text}”
+          </Text>
+        </Box>
+      ))}
+    </motion.div>
+  </Box>
+);
 
-    if (chatElement) {
-      chatElement.addEventListener("mouseover", showchatbox);
-    }
+/* ================= COMMISSION CALCULATOR ================= */
 
-    if (chatTopRightElement) {
-      chatTopRightElement.addEventListener("click", closechatbox);
-    }
+const CommissionCalculator = () => {
+  const [partner, setPartner] = useState(partnerTypes[0]);
+  const [referrals, setReferrals] = useState(30);
+  const [conversion, setConversion] = useState(70);
+  const [price, setPrice] = useState(7000);
+  const [yearlyView, setYearlyView] = useState(false);
 
-    if (sendBtnElement) {
-      sendBtnElement.addEventListener("click", sendmsg);
-    }
+  const enrollments = Math.round((referrals * conversion) / 100);
+  const grossRevenue = enrollments * price;
+  const baseCommission = (grossRevenue * partner.percent) / 100;
 
-    // You can use window.onload here to ensure the elements are present in the DOM
-    window.onload = showchatboxtime;
-  }, []);
-  const [data, setData] = useState({
-    name: "",
-    email: "",
-    message: "",
-  });
-  const { name, email, message } = data;
-  const handleChange = (e) =>
-    setData({ ...data, [e.target.name]: e.target.value });
+  let volumeBonus = 0;
+  if (enrollments >= 100) volumeBonus = 0.05;
+  else if (enrollments >= 50) volumeBonus = 0.03;
+  else if (enrollments >= 25) volumeBonus = 0.02;
 
-  const handleSubmit = async (e) => {
-    e.preventDefault();
-    try {
-      const response = await fetch(
-        "https://v1.nocodeapi.com/eshwar17/google_sheets/yHlEAzVFvPSMDOOW?tabId=Sheet2",
-        {
-          method: "POST",
-          headers: {
-            "Content-Type": "application/json",
-          },
-          body: JSON.stringify([[name, email, message]]),
-        }
-      );
-      await response.json();
-      setData({ ...data, name: "", email: "", message: "" });
-    } catch (err) {
-      console.log(err);
-    }
+  const consistencyBonus = enrollments >= 20 ? 0.02 : 0;
+  const institutionalBonus =
+    partner.key === "college" || partner.key === "training" ? 0.05 : 0;
+
+  const totalBonus =
+    baseCommission *
+    (volumeBonus + consistencyBonus + institutionalBonus);
+
+  const monthlyEarnings = baseCommission + totalBonus;
+  const yearlyEarnings = monthlyEarnings * 12;
+
+  const chartData = {
+    labels: yearlyView
+      ? ["Q1", "Q2", "Q3", "Q4"]
+      : ["Week 1", "Week 2", "Week 3", "Week 4"],
+    datasets: [
+      {
+        label: yearlyView
+          ? "Quarterly Earnings (₹)"
+          : "Monthly Growth (₹)",
+        data: yearlyView
+          ? [
+              yearlyEarnings * 0.2,
+              yearlyEarnings * 0.45,
+              yearlyEarnings * 0.7,
+              yearlyEarnings,
+            ]
+          : [
+              monthlyEarnings * 0.2,
+              monthlyEarnings * 0.45,
+              monthlyEarnings * 0.7,
+              monthlyEarnings,
+            ],
+        borderColor: PRIMARY,
+        backgroundColor: "rgba(2,142,196,0.15)",
+        tension: 0.4,
+        fill: true,
+      },
+    ],
   };
-  useEffect(() => {
-    const checkIfDesktop = () => {
-      const screenWidth = window.innerWidth;
-      setIsDesktop(screenWidth > 1024); // Set the width threshold for laptops/desktops
-    };
-
-    checkIfDesktop(); // Check initially
-    window.addEventListener("resize", checkIfDesktop); // Check on window resize
-
-    return () => {
-      window.removeEventListener("resize", checkIfDesktop); // Remove event listener on component unmount
-    };
-  }, []);
 
   return (
-    <Container w={"full"}>
-      <VStack h={"full"} justifyContent={"center"} spacing={"2"}>
-        <Heading
-        class="headerddd"
-          children="GrapplTech Partner Program"
-          pt={16}
-          textAlign={"center"}
-          fontFamily={"Poppins"}
-        />
-        <Center>
-      <svg width="260" height="20" viewBox="0 0 628 20" fill="none" xmlns="http://www.w3.org/2000/svg">
-<path d="M627.986 1.00956C606.425 2.19536 584.864 3.33831 563.318 4.58126C526.8 6.68141 490.282 8.83876 453.764 10.9675C417.073 13.1105 380.369 15.2678 343.678 17.3822C326.496 18.368 309.299 19.8824 292.102 19.9967C278.063 20.0824 264.024 18.4966 249.986 17.5537C206.994 14.6535 164.016 11.6104 121.024 8.79587C90.6637 6.81001 60.2894 5.13845 29.9294 3.2526C19.9529 2.63826 9.97646 1.80961 0 0.466655C14.0388 0.466655 28.0632 0.466655 42.1021 0.466655C74.7875 0.495229 107.473 0.552373 140.158 0.552373C153.494 0.552373 166.858 -0.00475617 180.165 0.609576C188.347 0.981032 196.457 0.266665 204.611 0.580974C213.396 0.923857 222.195 0.566659 230.994 0.552373C239.779 0.552373 248.579 0.523809 257.364 0.652391C259 0.680964 260.608 1.46674 262.546 1.99535C264.986 -2.07638 269.996 1.48104 274.001 0.666691C274.876 0.480963 276.183 2.3668 276.786 2.88113C277.991 2.28108 279.671 0.680992 281.365 0.680992C317.237 0.580984 353.109 0.652418 388.981 0.680992C394.924 0.680992 400.867 0.680992 406.968 0.680992C407.212 2.56685 407.413 4.08124 407.743 6.56714C408.705 4.13839 409.35 2.50971 410.183 0.42384C418.021 0.42384 425.916 0.609499 433.811 0.352337C438.821 0.195182 442.223 1.16671 441.72 7.25288C441.964 5.58132 441.663 3.42406 442.61 2.38112C443.658 1.22389 445.811 0.852423 447.548 0.580974C449.429 0.295238 451.395 0.509558 453.821 0.509558C454.323 2.49542 454.812 4.45265 455.601 7.59575C455.73 1.95247 455.658 -0.819169 462.348 1.88103C467.228 3.85261 473.961 0.766681 479.875 0.738108C528.379 0.55238 576.897 0.552418 625.402 0.509558C626.263 0.509558 627.124 0.595229 628 0.63809C628 0.766671 628 0.880979 628 1.00956H627.986Z" fill="#FEBD00"/></svg></Center>
+    <Box
+      bg={useColorModeValue("white", "gray.800")}
+      p={[6, 8, 10]}
+      borderRadius="2xl"
+      boxShadow="2xl"
+      maxW="980px"
+      mx="auto"
+    >
+      <Center flexDirection="column" mb={6}>
+        <Heading fontFamily="Bricolage Grotesque" textAlign="center">
+          Commission & Earnings Calculator
+        </Heading>
+        <Text color="gray.500" textAlign="center">
+          Transparent breakdown of commissions, bonuses, and long-term earnings
+        </Text>
+      </Center>
+
+      <VStack spacing={6} align="stretch">
         <Box>
-          <Center>
-            <Image
-              src="https://cdn.dribbble.com/users/1195555/screenshots/10739184/media/b1c7ee2733e393410a589bb6604ec711.gif" // Add your image source here
-              alt="GrapplTech Team"
-              borderRadius="lg"
-              maxW="60%"
-              objectFit="cover"
-              borderWidth={4}
-              borderColor="blue.500"
-            />
-          </Center>
-        </Box>
-        <Flex
-          flexWrap="wrap"
-          justifyContent="space-between"
-          alignItems="center"
-        >
-          <Box flex="1" mb={6} pr={[0, 0, 4]} order={[2, 2, 1]}>
-            <Heading
-              as="h2"
-              fontSize="2xl"
-              fontFamily={"Poppins"}
-              textAlign={["center"]}
-              mb={4}
-            >
-              Why Join as a Partner at GrapplTech?
-            </Heading>
-            <Text textAlign={"center"}>
-            Becoming a GrapplTech Partner means joining a community of passionate educators, tech enthusiasts, and entrepreneurs who are committed to empowering learners worldwide. Our mission is to provide top-notch, accessible tech education, and we need your help to reach even more aspiring programmers, designers, and developers.
-As a GrapplTech Partner, you will have the opportunity to promote our high-quality bootcamps and courses, helping students achieve their goals while earning commissions for each successful referral. Our bootcamps cover in-demand skills such as C++, UI/UX design, software development, and more, ensuring that you are offering valuable and relevant content to your audience.
-            </Text>
-            <Heading
-              as="h2"
-              fontSize="2xl"
-              fontFamily={"Poppins"}
-              textAlign={["center"]}
-              mb={4}
-            >
-              Benefits of Being a GrapplTech Partner
-            </Heading>
-            <Box mt={2}>
-            <Flex justifyContent="space-between" flexWrap="wrap">
-              {/* Education First */}
-              <Box flexBasis={["100%", "49%", "30%"]} textAlign="center" mb={4}>
-              
-                <Heading as="h3" fontSize="xl" fontFamily={"Poppins"} mt={2}>
-                Lucrative Commission Structure
-                </Heading>
-                <Text>
-                Earn competitive commissions for each student you refer who enrolls in our bootcamps. The more students you bring in, the higher your earnings.
-                </Text>
-              </Box>
-              {/* Community Driven */}
-              <Box flexBasis={["100%", "49%", "30%"]} textAlign="center" mb={4}>
-                
-                <Heading as="h3" fontSize="xl" fontFamily={"Poppins"} mt={2}>
-                High-Quality Live Bootcamps And Courses
-                </Heading>
-                <Text>
-                Promote courses that are meticulously designed by industry experts and cater to a wide range of tech enthusiasts, from beginners to advanced learners.
-                </Text>
-              </Box>
-              {/* Innovation Hub */}
-              <Box flexBasis={["100%", "49%", "30%"]} textAlign="center" mb={4}>
-                
-                <Heading as="h3" fontSize="xl" fontFamily={"Poppins"} mt={2}>
-                Extensive Marketing Support
-                </Heading>
-                <Text>
-                Access a wealth of marketing materials, including banners, social media content, and promotional videos, to help you effectively market our bootcamps.
-                </Text>
-              </Box>
-            </Flex>
-          </Box>
-          {/* Second Set */}
-          <Box mt={2}>
-            <Flex justifyContent="space-between" flexWrap="wrap">
-              {/* Education First */}
-              <Box flexBasis={["100%", "49%", "30%"]} textAlign="center" mb={4}>
-              
-                <Heading as="h3" fontSize="xl" fontFamily={"Poppins"} mt={2}>
-                Dedicated Partner Portal
-                </Heading>
-                <Text>
-                Use our intuitive partner portal to track your referrals, monitor your earnings, and access exclusive resources designed to help you succeed.
-                </Text>
-              </Box>
-              {/* Community Driven */}
-              <Box flexBasis={["100%", "49%", "30%"]} textAlign="center" mb={4}>
-                
-                <Heading as="h3" fontSize="xl" fontFamily={"Poppins"} mt={2}>
-                Exclusive Partner Discounts And Goodies
-                </Heading>
-                <Text>
-                Receive discounts on our courses and bootcamps for your personal growth and development. We even provide goodies for partners.
-                </Text>
-              </Box>
-              {/* Innovation Hub */}
-              <Box flexBasis={["100%", "49%", "30%"]} textAlign="center" mb={4}>
-                
-                <Heading as="h3" fontSize="xl" fontFamily={"Poppins"} mt={2}>
-                Community and Networking Opportunities
-                </Heading>
-                <Text>
-                Join a vibrant community of like-minded partners, share insights, and collaborate on initiatives to drive success.
-                </Text>
-              </Box>
-            </Flex>
-          </Box>
-            <Text mt={4} textAlign={"center"}>
-            Partnering with GrapplTech is not just about earning commissions; it’s about making a difference in the tech education landscape. If you are passionate about education and want to help others while growing your own business, the GrapplTech Partner Program is the perfect opportunity for you.
-            </Text>
-          </Box>
-        </Flex>
-
-        <div
-          style={{
-            display: "flex",
-            justifyContent: "space-between",
-            padding: "2%",
-          }}
-        >
-        </div>
-        <form onSubmit={handleSubmit} style={{ width: "100%" }}>
-          <Box my={"2"}>
-            <FormLabel htmlFor="name" children="Full Name" />
-            <Input
-              required
-              name="name"
-              value={name}
-              onChange={handleChange}
-              placeholder="Enter your full name"
-              type="text"
-              focusBorderColor="blue.500"
-            />
-          </Box>
-          <Box my={"4"}>
-            <FormLabel htmlFor="email" children="Email Address" />
-            <Input
-              required
-              name="email"
-              value={email}
-              onChange={handleChange}
-              placeholder="abc@gmail.com"
-              type="email"
-              focusBorderColor="blue.500"
-            />
-          </Box>
-          <Box my={"4"}>
-            <FormLabel
-              htmlFor="message"
-              children="Why do you want to be a partner for GrapplTech?"
-            />
-            <Textarea
-              required
-              name="message"
-              value={message}
-              onChange={handleChange}
-              placeholder="Enter you message"
-              focusBorderColor="blue.500"
-            />
-          </Box>
-          <Center>
-            <Button my="4" colorScheme="blue" type="submit">
-              Apply Now
-            </Button>
-          </Center>
-
-          <Box my={"4"}>
-            Register for a bootcamp?{" "}
-            <Link to="/request">
-              <Button colorScheme="blue" variant={"link"}>
-                Click
-              </Button>{" "}
-              here
-            </Link>
-          </Box>
-        </form>
-      </VStack>
-      <>
-        <div id="chat-box">
-          <div id="chat-top">
-            Grappie: Your Guide{" "}
-            <span id="chat-top-right">
-              <svg
-                id="close-box"
-                xmlns="http://www.w3.org/2000/svg"
-                width={20}
-                height={20}
-                viewBox="0 0 48 48"
-              >
-                <path
-                  d="M38 12.83L35.17 10 24 21.17 12.83 10 10 12.83 21.17 24 10 35.17 12.83 38 24 26.83 35.17 38 38 35.17 26.83 24z"
-                  fill="#fff"
-                />
-              </svg>
-            </span>
-            <div className="clear" />
-          </div>
-          <div id="chat-msg">
-            <p>
-              Welcome to GrapplTech, your gateway to exciting bootcamps!
-            </p>
-            <div id="chat-form">
-              <div className="chat-in">
-                <input
-                  type="text"
-                  id="whats-in"
-                  placeholder="Send Your Message..."
-                />
-              </div>
-              <div id="send-btn">
-                <svg
-                  xmlns="http://www.w3.org/2000/svg"
-                  width={38}
-                  height={38}
-                  viewBox="0 0 48 48"
-                >
-                  <path
-                    d="M4.02 42L46 24 4.02 6 4 20l30 4-30 4z"
-                    fill="rgb(18, 140, 126)"
-                  />
-                </svg>
-              </div>
-            </div>
-          </div>
-        </div>
-        <div id="whats-chat">
-          <svg
-            xmlns="http://www.w3.org/2000/svg"
-            version={1}
-            width={35}
-            height={35}
-            viewBox="0 0 90 90"
+          <Text fontWeight="600">Partner Type</Text>
+          <Select
+            value={partner.key}
+            onChange={(e) =>
+              setPartner(partnerTypes.find(p => p.key === e.target.value))
+            }
           >
-            <path
-              d="M90 44a44 44 0 0 1-66 38L0 90l8-24A44 44 0 0 1 46 0c24 0 44 20 44 44zM46 7C25 7 9 24 9 44c0 8 2 15 7 21l-5 14 14-4a37 37 0 0 0 58-31C83 24 66 7 46 7zm22 47l-2-1-7-4-3 1-3 4h-3c-1 0-4-1-8-5-3-3-6-6-6-8v-2l2-2 1-1v-2l-4-8c0-2-1-2-2-2h-2l-3 1c-1 1-4 4-4 9s4 11 5 11c0 1 7 12 18 16 11 5 11 3 13 3s7-2 7-5l1-5z"
-              fill="#FFF"
+            {partnerTypes.map(p => (
+              <option key={p.key} value={p.key}>
+                {p.label} — {p.percent}% base
+              </option>
+            ))}
+          </Select>
+        </Box>
+
+        <SimpleGrid columns={[1, 2, 3]} spacing={4}>
+          <Box>
+            <Text fontWeight="600">Referrals / Month</Text>
+            <Input
+              type="number"
+              value={referrals}
+              onChange={e => setReferrals(Number(e.target.value))}
             />
-          </svg>
-        </div>
-        <style
-          dangerouslySetInnerHTML={{
-            __html:
-              "\n  body{width:100%}\n*{margin:0px;padding:0px;box-sizing:border-box;}\n#whats-chat{position:fixed;right:3%;bottom:10%;height:auto;width:auto;background:#0963ac;padding:12.5px;border-radius:50px;}\n#whats-chat:hover{cursor:pointer;box-shadow:2px 2px 15px #ccc;bottom:11%;}\n/*===============================*/\n#chat-box{position:fixed;right:-500px;bottom:18%;width:250px;height:200px;transition:all .5s;}\n#chat-top{width:100%;line-height:2;background:rgb(18, 140, 126);color:white;text-align:center;border-radius:5px 5px 0 0;padding:0 10px;}\n#chat-msg{background:#ece5dd;padding:10px;border-radius:0 0 5px 5px;box-shadow:0 0 25px -10px #999;}\n#chat-msg p{font-size:14px;padding:5px;border-radius:0 50px 50px 50px;margin-bottom:10px;}\n#chat-form{display:flex;}\n.chat-in{width:80%;}\n#chat-form input{border-radius:5px 0 5px 5px;border:none;outline:none;font-size:14px;padding:5px;line-height:2;}\n#send-btn{width:20%;padding: 0 5px;}\n#chat-top-right{float:right;padding:5px 0;}\n#chat-box:after{content:'';\n    position: absolute;\n    top:58%;\n    left: 90%;\n    width: 0;\n    height: 0;\n    border-top: 25px solid transparent;\n  border-bottom: 25px solid transparent; \n  \n  border-right:25px solid #ece5dd;}\n.right{float:right}\n.clear{clear:both}\n",
-          }}
-        />
-      </>
-    </Container>
+          </Box>
+
+          <Box>
+            <Text fontWeight="600">Conversion Rate (%)</Text>
+            <Input
+              type="number"
+              value={conversion}
+              onChange={e => setConversion(Number(e.target.value))}
+            />
+          </Box>
+
+          <Box>
+            <Text fontWeight="600">Avg Bootcamp Fee (₹)</Text>
+            <Input
+              type="number"
+              value={price}
+              onChange={e => setPrice(Number(e.target.value))}
+            />
+          </Box>
+        </SimpleGrid>
+
+        <Divider />
+
+        <SimpleGrid columns={[1, 2]} spacing={4}>
+          <Box>
+            <Text fontSize="sm" color="gray.500">Enrollments</Text>
+            <Text fontWeight="700">{enrollments}</Text>
+          </Box>
+
+          <Box>
+            <Text fontSize="sm" color="gray.500">Gross Revenue</Text>
+            <Text fontWeight="700">₹{grossRevenue.toLocaleString()}</Text>
+          </Box>
+
+          <Box>
+            <Text fontSize="sm" color="gray.500">Base Commission</Text>
+            <Text fontWeight="700" color={PRIMARY}>
+              ₹{baseCommission.toLocaleString()}
+            </Text>
+          </Box>
+
+          <Box>
+            <Text fontSize="sm" color="gray.500">Total Monthly Earnings</Text>
+            <Text fontWeight="800" color={PRIMARY}>
+              ₹{monthlyEarnings.toLocaleString()}
+            </Text>
+          </Box>
+        </SimpleGrid>
+
+        <Box bg="gray.50" p={4} borderRadius="md">
+          <Text fontWeight="600">Bonus Tiers</Text>
+          <Text fontSize="sm" color="gray.600">
+            • 25+ enrollments → 2% volume bonus<br />
+            • 50+ enrollments → 3% volume bonus<br />
+            • 100+ enrollments → 5% volume bonus<br />
+            • Institution / Training Partner → +5%<br />
+            • Consistency (20+ monthly enrollments) → +2%
+          </Text>
+        </Box>
+
+        <HStack justify="center">
+          <Text fontSize="sm">Monthly</Text>
+          <Switch
+            isChecked={yearlyView}
+            onChange={() => setYearlyView(!yearlyView)}
+          />
+          <Text fontSize="sm">Yearly</Text>
+        </HStack>
+
+        <Line data={chartData} />
+      </VStack>
+    </Box>
+  );
+};
+
+/* ================= MAIN PAGE ================= */
+
+const CampusAmbassador = () => {
+  const textMuted = useColorModeValue("gray.600", "gray.400");
+
+  return (
+    <Box w="100%">
+      {/* PAGE HEADER */}
+       
+      <Center py={[2, 2]} flexDirection="column" px={[4, 8, 16]}>
+      <Center>
+              <Text
+                fontSize={["4xl", "4xl", "7xl"]}
+                fontWeight="800"
+                lineHeight="1.1"
+                color={useColorModeValue("black", "white")}
+                fontFamily="Bricolage Grotesque"
+                textAlign="center"
+                position="relative"
+                zIndex={2}
+                mt={6}
+              >
+                GrapplTech's Partner Program
+              </Text>
+            </Center>
+        <AnimatedUnderline1 />
+        <Text mt={2} maxW="4xl" textAlign="center" fontSize="lg" color={textMuted}>
+          The GrapplTech Partner Program is a long-term, performance-driven
+          collaboration for students, faculty, institutions, and professionals
+          to earn consistently while enabling real tech careers.
+        </Text>
+      </Center>
+
+      <Center py={2}>
+        <Image src={PartnerIllustration} maxW={["90%", "70%", "45%"]} />
+      </Center>
+      <Center py={2} flexDirection="column" px={[4, 8, 16]}>
+  <Heading
+    fontFamily="Bricolage Grotesque"
+    textAlign="center"
+  >
+    Why Partner with GrapplTech?
+  </Heading>
+
+  <Text
+    mt={6}
+    maxW="4xl"
+    textAlign="center"
+    color={textMuted}
+    fontSize="lg"
+  >
+    GrapplTech is built around one core principle — <strong>real career outcomes</strong>.
+    Every bootcamp, workshop, and learning pathway is designed to move learners
+    closer to industry readiness, not just certifications.
+  </Text>
+
+  <Text
+    mt={4}
+    maxW="4xl"
+    textAlign="center"
+    color={textMuted}
+  >
+    When you partner with GrapplTech, you’re not just referring a course —
+    you’re enabling students and professionals to gain practical skills,
+    mentorship, and confidence that translate directly into real-world
+    opportunities.
+  </Text>
+
+  <Text
+    mt={4}
+    maxW="4xl"
+    textAlign="center"
+    color={textMuted}
+  >
+    Our partner ecosystem is designed to be transparent, fair, and sustainable.
+    Commissions are clearly defined, payouts are timely, and performance is
+    tracked openly so partners always know where they stand.
+  </Text>
+
+  <Text
+    mt={4}
+    maxW="4xl"
+    textAlign="center"
+    color={textMuted}
+  >
+    Whether you are a student guiding your juniors, a faculty member mentoring
+    batches, an institution upskilling cohorts, or an individual with a strong
+    professional network — GrapplTech gives you the structure, support, and
+    incentives to grow alongside your learners.
+  </Text>
+</Center>
+
+ <PartnerWhySection />
+
+      {/* CALCULATOR */}
+      <Box py={4} px={[4, 8, 16]}>
+        <CommissionCalculator />
+      </Box>
+
+      {/* TESTIMONIALS */}
+      <Box py={4} bg={useColorModeValue("gray.50", "gray.900")}>
+        <Center mb={8}>
+          <Heading fontFamily="Bricolage Grotesque" textAlign="center">
+            Trusted by Students & Faculty
+          </Heading>
+        </Center>
+        <TestimonialSlider />
+      </Box>
+
+      {/* PAYOUT INFO */}
+      <Center py={4} flexDirection="column" px={[4, 8, 16]}>
+        <Center mb={8}>
+          <Heading fontFamily="Bricolage Grotesque" textAlign="center">
+            Payout Frequency & Transparency
+          </Heading>
+        </Center>
+        <Text mt={4} maxW="4xl" textAlign="center" color={textMuted}>
+          Partner commissions are calculated after confirmed enrollments and
+          released on a monthly payout cycle. Detailed statements ensure
+          complete transparency.
+        </Text>
+      </Center>
+
+      {/* CTA */}
+      <Center py={4} flexDirection="column">
+        <Center mb={8}>
+          <Heading fontFamily="Bricolage Grotesque" textAlign="center">
+            Ready to Partner With GrapplTech?
+          </Heading>
+        </Center>
+        <Button
+          as={Link}
+          to="/partner-apply"
+          bg={PRIMARY}
+          color="white"
+          size="lg"
+          borderRadius="full"
+        >
+          Apply Now →
+        </Button>
+      </Center>
+    </Box>
   );
 };
 

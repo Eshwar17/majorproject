@@ -7,6 +7,25 @@ import {Provider as ReduxProvider} from "react-redux";
 import store from './redux/store';
 import './index.css';
 import Popups from './popups/Popup.jsx';
+import {
+  Chart as ChartJS,
+  CategoryScale,
+  LinearScale,
+  PointElement,
+  LineElement,
+  Tooltip,
+  Legend,
+} from "chart.js";
+
+ChartJS.register(
+  CategoryScale,
+  LinearScale,
+  PointElement,
+  LineElement,
+  Tooltip,
+  Legend
+);
+
 
 const container = document.getElementById('root');
 const root = ReactDOM.createRoot(container);

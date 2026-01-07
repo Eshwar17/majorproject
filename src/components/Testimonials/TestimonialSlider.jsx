@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import {Text, Center, Avatar, Stack, useColorModeValue, Box,Container} from '@chakra-ui/react';
 import { testimonials } from './data'; // Import your data
-import AnimatedUnderline from '../Underlines/AnimatedUnderline';
+import AnimatedUnderline from '../Underlines/AnimatedUnderline1';
 
 const TestimonialSlider = () => {
   const [currentIndex, setCurrentIndex] = useState(0);

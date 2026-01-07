@@ -50,14 +50,14 @@ function Header() {
             <VStack spacing={'6'} alignItems={'flex-start'}>
               <LinkButton onClose={onClose} url="/" title="Home" />
               <LinkButton onClose={onClose} url="/bootcamps" title="Browse All Bootcamps" />
-              <LinkButton onClose={onClose} url="/request" title="Apply For A Bootcamp" />
-              <LinkButton onClose={onClose} url="/fullstack-supremacy" title="Full Stack Developer in 100 days" />
               <LinkButton onClose={onClose} url="/portfolio-services" title="Portfolio Services" />
               <LinkButton onClose={onClose} url="/workshops" title="Workshops & Hackathons" />
-              <LinkButton onClose={onClose} url="/resumemaker" title="GrapplTech's Resume Maker" />
+              <LinkButton onClose={onClose} url="/outsourcing" title="Outsourcing at GrapplTech" />
               <LinkButton onClose={onClose} url="/partnerregistration" title="Become A Partner" />
-              <LinkButton onClose={onClose} url="/contact" title="Contact Us" />
               <LinkButton onClose={onClose} url="/about" title="About Us" />
+              <LinkButton onClose={onClose} url="/contact" title="Contact Us" />
+              {/* <LinkButton onClose={onClose} url="/request" title="Apply For A Bootcamp" />
+              <LinkButton onClose={onClose} url="/resumemaker" title="GrapplTech's Resume Maker" /> */}
             </VStack>
           </DrawerBody>
         </DrawerContent>

@@ -22,7 +22,7 @@ import {
 } from "@chakra-ui/react";
 import { motion } from "framer-motion";
 import { useState } from "react";
-import AnimatedUnderline from "../Underlines/AnimatedUnderline";
+import AnimatedUnderline from "../Underlines/AnimatedUnderline1";
 
 
 const MotionBox = motion(Box);
@@ -274,7 +274,7 @@ export default function BootcampsPage() {
   const mutedText = useColorModeValue("gray.600", "gray.400");
 
   return (
-    <Box px={[4, 10]} py={16}>
+    <Box px={[4, 10]} py={4}>
       <Center flexDirection="column">
         <Text
           fontSize={["4xl", "5xl", "7xl"]}
@@ -283,7 +283,7 @@ export default function BootcampsPage() {
           textAlign="center"
           color={useColorModeValue("black", "white")}
         >
-          Bootcamps
+          Our Amazing Bootcamps
         </Text>
         <AnimatedUnderline />
       </Center>

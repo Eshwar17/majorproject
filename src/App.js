@@ -33,6 +33,7 @@ import RakeshJalla from './components/People/RakeshJalla';
 import BasettiVenkataAnilKumar from './components/People/BasettiVenkataAnilKumar';
 import BackendSupremacy from './components/BackendSupremacy/BackendSupremacy';
 import BootcampsPage from './components/Bootcamps/Bootcamps';
+import Outsourcing from './components/Outsourcing/Outsourcing';
 
 function App() {
   // window.addEventListener("contextmenu", (e)=>{
@@ -81,7 +82,7 @@ function App() {
         <Route path="/resumetemplate1" element={<ResumeEditor />} />
         <Route path="/resumemaker" element={<ResumePage />} />
         <Route path="/partnerregistration" element={<CampusAmbassador />} />
-        <Route path="/fullstack-supremacy" element={<BackendSupremacy />} />
+        <Route path="/outsourcing" element={<Outsourcing />} />
         <Route path="/backendsupremacy" element={<BackendSupremacy />} />
         <Route path="/akashbellam" element={<People />} />
         <Route path="/bathinivenkatarushitha" element={<BathiniVenkataRushitha/>} />
