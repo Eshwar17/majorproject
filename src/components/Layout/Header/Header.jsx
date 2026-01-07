@@ -56,8 +56,8 @@ function Header() {
               <LinkButton onClose={onClose} url="/partnerregistration" title="Become A Partner" />
               <LinkButton onClose={onClose} url="/about" title="About Us" />
               <LinkButton onClose={onClose} url="/contact" title="Contact Us" />
-              {/* <LinkButton onClose={onClose} url="/request" title="Apply For A Bootcamp" />
-              <LinkButton onClose={onClose} url="/resumemaker" title="GrapplTech's Resume Maker" /> */}
+              {/* {/* <LinkButton onClose={onClose} url="/request" title="Apply For A Bootcamp" /> */}
+              <LinkButton onClose={onClose} url="/careers" title="Careers" />
             </VStack>
           </DrawerBody>
         </DrawerContent>

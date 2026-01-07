@@ -14,7 +14,6 @@ import {
   Divider,
   Switch,
 } from "@chakra-ui/react";
-import { Link } from "react-router-dom";
 import { useState } from "react";
 import { Line } from "react-chartjs-2";
 import { motion } from "framer-motion";
@@ -419,16 +418,21 @@ const CampusAmbassador = () => {
             Ready to Partner With GrapplTech?
           </Heading>
         </Center>
-        <Button
-          as={Link}
-          to="/partner-apply"
-          bg={PRIMARY}
-          color="white"
-          size="lg"
-          borderRadius="full"
-        >
-          Apply Now →
-        </Button>
+      <Button
+  as="a"
+  href="https://tally.so/r/obeQab"
+  target="_blank"
+  rel="noopener noreferrer"
+  size="lg"
+  bg="#FFA900"
+  color="black"
+  borderRadius="none"
+  px={10}
+  _hover={{ bg: "gray.200" }}
+  rightIcon={<span>→</span>}
+>
+  Let’s Talk
+</Button>
       </Center>
     </Box>
   );

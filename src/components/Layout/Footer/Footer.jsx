@@ -31,24 +31,28 @@ const Footer = () => {
             fontSize={["3xl", "4xl", "5xl"]}
             fontWeight="900"
             lineHeight="1.2"
+            color={"white"}
           >
             Grapple First. <br />
             Execute Better.
           </Heading>
 
           <Button
-            as={Link}
-            to="/contact"
-            size="lg"
-            bg="white"
-            color="black"
-            borderRadius="none"
-            px={10}
-            _hover={{ bg: "gray.200" }}
-            rightIcon={<span>→</span>}
-          >
-            Let’s Talk
-          </Button>
+  as="a"
+  href="https://tally.so/r/obeQab"
+  target="_blank"
+  rel="noopener noreferrer"
+  size="lg"
+  bg="white"
+  color="black"
+  borderRadius="none"
+  px={10}
+  _hover={{ bg: "gray.200" }}
+  rightIcon={<span>→</span>}
+>
+  Let’s Talk
+</Button>
+
 
           <Box p={6}>
             <Text fontSize="sm" color={textMuted}>
@@ -128,16 +132,16 @@ const Footer = () => {
 >
   <Text
     fontFamily="Bricolage Grotesque"
-    fontSize="clamp(4rem, 18vw, 18rem)"
+    fontSize="clamp(4rem, 18vw, 32rem)"
     fontWeight="800"
     lineHeight="0.9"
-    letterSpacing="-0.06em"
-    opacity={0.90}
+    letterSpacing="-0.02em"
+    color={"white"}
     userSelect="none"
     whiteSpace={["normal", "nowrap"]}
     wordBreak="break-word"
   >
-    GRAPPLTECH
+    grappltech
   </Text>
 </Box>
     </Box>
