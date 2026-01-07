@@ -13,7 +13,6 @@ import {
   Input,
   Divider,
   Switch,
-  Badge,
 } from "@chakra-ui/react";
 import { Link } from "react-router-dom";
 import { useState } from "react";
@@ -22,6 +21,11 @@ import { motion } from "framer-motion";
 import AnimatedUnderline1 from "../Underlines/AnimatedUnderline1";
 import PartnerIllustration from "../../assets/images/PartnerIllusration.gif";
 import PartnerWhySection from "./PartnerWhySection";
+import Test01 from "../../assets/images/private/Test01.png";
+import Test02 from "../../assets/images/private/Test02.png";
+import Test03 from "../../assets/images/private/Test03.png";
+import Test04 from "../../assets/images/private/Test04.png";
+import Test05 from "../../assets/images/private/Test05.png";
 
 /* ================= CONSTANTS ================= */
 
@@ -41,33 +45,33 @@ const partnerTypes = [
 
 const testimonials = [
   {
-    name: "Dr. Suresh Kumar",
+    name: "Suresh Kumar",
     role: "Faculty – Chennai",
-    image: "https://randomuser.me/api/portraits/men/45.jpg",
+    image: `${Test01}`,
     text: "GrapplTech’s programs align perfectly with industry needs and student outcomes.",
   },
   {
-    name: "Anjali R",
-    role: "Student – Tirupati",
-    image: "https://randomuser.me/api/portraits/women/65.jpg",
+    name: "Ramana Reddy",
+    role: "Faculty – Tirupati",
+    image: `${Test04}`,
     text: "The bootcamp helped me transition confidently into real-world development.",
   },
   {
     name: "Rohit Sharma",
-    role: "Student – Hyderabad",
-    image: "https://randomuser.me/api/portraits/men/22.jpg",
+    role: "Faculty – Hyderabad",
+    image: `${Test02}`,
     text: "Live mentorship and projects made learning practical and effective.",
   },
   {
-    name: "Prof. Lakshmi Devi",
+    name: "Lakshmi Devi",
     role: "Faculty – Anantapur",
-    image: "https://randomuser.me/api/portraits/women/52.jpg",
+    image: `${Test03}`,
     text: "The partner model is transparent and ideal for academic collaboration.",
   },
   {
     name: "Karthik S",
     role: "Student – Tamil Nadu",
-    image: "https://randomuser.me/api/portraits/men/58.jpg",
+    image: `${Test05}`,
     text: "Clear curriculum and guidance helped me choose the right tech career.",
   },
 ];

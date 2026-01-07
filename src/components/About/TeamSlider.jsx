@@ -11,13 +11,13 @@ import { motion } from "framer-motion";
 import { useEffect, useState } from "react";
 
 // Images
-import ArunaImg from "../../assets/images/ArunaKumari.png";
-import EshwarImg from "../../assets/images/EshwarNagaraj.png";
-import SruthiImg from "../../assets/images/SruthiPasupuletiGrpTeam.png";
-import ChaitanyaImg from "../../assets/images/ChaitanyaReddy.png";
-import ArunImg from "../../assets/images/ArunPatil.png";
-import MuraliImg from "../../assets/images/MuraliKumar.png";
-import SowmyaImg from "../../assets/images/SowmyaRanjan.png";
+import ArunaImg from "../../assets/images/private/ArunaKumari.png";
+import EshwarImg from "../../assets/images/private/EshwarNagaraj.png";
+import SruthiImg from "../../assets/images/private/SruthiPasupuletiGrpTeam.png";
+import ChaitanyaImg from "../../assets/images/private/ChaitanyaReddy.png";
+import ArunImg from "../../assets/images/private/ArunPatil.png";
+import MuraliImg from "../../assets/images/private/MuraliKumar.png";
+import SowmyaImg from "../../assets/images/private/SowmyaRanjan.png";
 
 const MotionBox = motion(Box);
 
