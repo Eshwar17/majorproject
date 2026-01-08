@@ -12,7 +12,7 @@ import {
   Img
 } from '@chakra-ui/react';
 import { RiMenu5Fill } from 'react-icons/ri';
-import logo from "../../../assets/images/grappltechlogoimg1.png";
+import logo from "../../../assets/images/GRPTechLogo.png";
 import { Link } from 'react-router-dom';
 
 const LinkButton = ({ url = '/', title = 'Home', onClose }) => (
@@ -49,14 +49,14 @@ function Header() {
           <DrawerBody>
             <VStack spacing={'6'} alignItems={'flex-start'}>
               <LinkButton onClose={onClose} url="/" title="Home" />
+              <LinkButton onClose={onClose} url="/techinweek" title="Tech In Week" />
               <LinkButton onClose={onClose} url="/bootcamps" title="Browse All Bootcamps" />
               <LinkButton onClose={onClose} url="/portfolio-services" title="Portfolio Services" />
               <LinkButton onClose={onClose} url="/workshops" title="Workshops & Hackathons" />
-              <LinkButton onClose={onClose} url="/outsourcing" title="Outsourcing at GrapplTech" />
+              <LinkButton onClose={onClose} url="/outsourcing" title="Hire To Build" />
               <LinkButton onClose={onClose} url="/partnerregistration" title="Become A Partner" />
               <LinkButton onClose={onClose} url="/about" title="About Us" />
               <LinkButton onClose={onClose} url="/contact" title="Contact Us" />
-              {/* {/* <LinkButton onClose={onClose} url="/request" title="Apply For A Bootcamp" /> */}
               <LinkButton onClose={onClose} url="/careers" title="Careers" />
             </VStack>
           </DrawerBody>

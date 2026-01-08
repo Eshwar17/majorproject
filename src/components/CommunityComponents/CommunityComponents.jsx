@@ -6,7 +6,7 @@ import {
   Text,
   Flex,
   Center,
-  Image,
+  Button,
   Icon,
   useColorModeValue
 } from "@chakra-ui/react";
@@ -14,9 +14,6 @@ import { MdCall } from "react-icons/md";
 import { BiSupport } from "react-icons/bi";
 import { BsPersonCheckFill } from "react-icons/bs";
 import cooking from "../../assets/images/cooking.png";
-import portfolios from "../../assets/images/portfolios.png";
-import GoogleCalendarButton from './GoogleCalenderButton';
-import AnimatedUnderline from '../Underlines/AnimatedUnderline';
 import AnimatedUnderline1 from '../Underlines/AnimatedUnderline1';
 
 function Services() {
@@ -234,7 +231,21 @@ So… apron’s on. Tools are ready. Let’s cook. 🍳🔥
               Real People. Real Growth. Real Results.
               </Text>
               <Center>
-              <GoogleCalendarButton /></Center>
+               <Button
+  as="a"
+  href="https://tally.so/r/obeQab"
+  target="_blank"
+  rel="noopener noreferrer"
+  size="lg"
+  bg="#FFA900"
+  color="black"
+  borderRadius="none"
+  px={10}
+  _hover={{ bg: "gray.200" }}
+  rightIcon={<span>→</span>}
+>
+  Book Your Appointment
+</Button></Center>
             </Box>
           </Flex>
           <Box mt={10} p={6} bg="gray.50" borderRadius="md">

@@ -42,7 +42,7 @@ const BOOTCAMPS = [
     tags: ["HTML5", "CSS3", "JavaScript", "React", "Node.js"],
     reviews: 1920,
     price: 75000,
-    discount: 23000,
+    discount: 9000,
     curriculum: ["Frontend", "Backend", "APIs", "Deployment", "Capstone"],
   },
   {
@@ -55,8 +55,8 @@ const BOOTCAMPS = [
     description: "Turn raw data into insights that drive decisions.",
     tags: ["SQL", "Python", "Excel", "Power BI"],
     reviews: 1460,
-    price: 68000,
-    discount: 17000,
+    price: 16000,
+    discount: 6000,
     curriculum: ["SQL", "Python", "Dashboards", "Case Studies"],
   },
   {
@@ -69,8 +69,8 @@ const BOOTCAMPS = [
     description: "Build data pipelines for large-scale systems.",
     tags: ["Python", "Spark", "Airflow", "AWS"],
     reviews: 980,
-    price: 98000,
-    discount: 16000,
+    price: 17000,
+    discount: 5000,
     curriculum: ["ETL", "Big Data", "Cloud", "Capstone"],
   },
   {
@@ -83,8 +83,8 @@ const BOOTCAMPS = [
     description: "Deploy, scale, and monitor applications in the cloud.",
     tags: ["AWS", "Docker", "Kubernetes", "CI/CD"],
     reviews: 870,
-    price: 95000,
-    discount: 22000,
+    price: 19000,
+    discount: 6000,
     curriculum: ["Cloud Basics", "Docker", "K8s", "Pipelines"],
   },
 
@@ -100,7 +100,7 @@ const BOOTCAMPS = [
     tags: ["Python", "OOPS"],
     reviews: 2100,
     price: 18000,
-    discount: 7000,
+    discount: 4000,
     curriculum: ["Basics", "Functions", "Mini Project"],
   },
   {
@@ -113,8 +113,8 @@ const BOOTCAMPS = [
     description: "Write efficient queries and optimize databases.",
     tags: ["SQL", "Indexes"],
     reviews: 1750,
-    price: 22000,
-    discount: 6000,
+    price: 9000,
+    discount: 3000,
     curriculum: ["Queries", "Joins", "Indexes"],
   },
   {
@@ -128,57 +128,9 @@ const BOOTCAMPS = [
     tags: ["Git", "GitHub"],
     reviews: 1340,
     price: 8000,
-    discount: 8000,
+    discount: 2000,
     curriculum: ["Git Basics", "Branching", "PRs"],
   },
-
-  /* ================= TECH IN A WEEK ================= */
-  ...[
-    {
-      tech: "ReactJS",
-      desc: "Build modern UI components and hooks.",
-      tags: ["React", "Hooks"],
-      reviews: 820,
-    },
-    {
-      tech: "NodeJS",
-      desc: "Create backend APIs and services.",
-      tags: ["Node", "Express"],
-      reviews: 760,
-    },
-    {
-      tech: "Python",
-      desc: "Python essentials in 7 focused days.",
-      tags: ["Python"],
-      reviews: 910,
-    },
-    {
-      tech: "Figma",
-      desc: "Design clean, user-friendly interfaces.",
-      tags: ["Figma", "UI/UX"],
-      reviews: 680,
-    },
-    {
-      tech: "SQL",
-      desc: "Understand databases fast and clearly.",
-      tags: ["SQL"],
-      reviews: 740,
-    },
-  ].map((item, i) => ({
-    id: 100 + i,
-    title: `${item.tech} in 7 Days`,
-    type: "TechInWeek",
-    duration: "7 Days",
-    dates: "12 Jan – 31 Mar",
-    status: "Open",
-    image: "https://images.unsplash.com/photo-1518770660439-4636190af475",
-    description: item.desc,
-    tags: item.tags,
-    reviews: item.reviews,
-    price: 5999,
-    discount: 999,
-    curriculum: ["Core Concepts", "Hands-on Labs", "Mini Project"],
-  })),
 ];
 
 /* ========================= COMPONENTS ========================= */
@@ -304,7 +256,7 @@ export default function BootcampsPage() {
               ? "Macro Bootcamps"
               : section === "Micro"
               ? "Micro Bootcamps"
-              : "Tech in a Week 🚀"}
+              : ""}
           </Text>
           <SliderRow>
             {BOOTCAMPS.filter(

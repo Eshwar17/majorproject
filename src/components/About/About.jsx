@@ -4,7 +4,6 @@ import {
   Container,
   Heading,
   Text,
-  Flex,
   Center,
   SimpleGrid,
   Icon,
@@ -18,7 +17,6 @@ import {
 } from "react-icons/fa";
 import { RiCustomerService2Line } from "react-icons/ri";
 import { MdVoiceChat } from "react-icons/md";
-import { Link } from "react-router-dom";
 import TeamSlider from "./TeamSlider";
 import AnimatedUnderline1 from "../Underlines/AnimatedUnderline1";
 
@@ -201,18 +199,21 @@ const About = () => {
           for those who want to grow with intention and impact.
         </Text>
 
-        <Link to="/request">
-          <Button
-            size="lg"
-            bg="#028EC4"
-            color="white"
-            borderRadius="full"
-            px={10}
-            _hover={{ bg: "#09537B" }}
-          >
-            Get Started →
-          </Button>
-        </Link>
+         <Button
+  as="a"
+  href="https://tally.so/r/obeQab"
+  target="_blank"
+  rel="noopener noreferrer"
+  size="lg"
+  bg="#FFA900"
+  color="black"
+  borderRadius="none"
+  px={10}
+  _hover={{ bg: "gray.200" }}
+  rightIcon={<span>→</span>}
+>
+  Let’s Talk
+</Button>
       </Center>
     </Container>
   );

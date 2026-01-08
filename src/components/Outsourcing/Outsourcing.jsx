@@ -312,7 +312,7 @@ const Outsourcing = () => {
 
           <Center mt={10}>
             <Badge px={5} py={3} fontSize="md" colorScheme="blue">
-              Example: Intern stipend ₹15,000 → Commission applied as %
+              Example: Intern stipend ₹15,000 → <br></br>Commission applied as %
             </Badge>
           </Center>
         </Box>
